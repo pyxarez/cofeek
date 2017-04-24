@@ -1,0 +1,18 @@
+.shop-title {
+  composes: big-title from '../../assets/typography.css';
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.shop-link {
+  composes: huge-link from '../../assets/typography.css';
+  composes: links from '../../assets/general.css';
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.shop-links {
+  margin-bottom: 100px;
+}

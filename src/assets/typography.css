@@ -15,4 +15,13 @@
 
 .secondary-font-family {
   font-family: "Lemon Tuesday";
+  color: white;
+}
+
+.big-title {
+  font-size: 250%;
+}
+
+.huge-link {
+  font-size: 450%;
 }

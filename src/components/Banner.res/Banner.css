@@ -1,0 +1,33 @@
+.common {
+  height: 100vh;
+  background-image: url('./bg-image2.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-wrapper {
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  width: 100%;
+}
+
+.title {
+  composes: secondary-font-family from '../../assets/typography.css';
+  font-size: 160px;
+  margin-bottom: 20px;
+}
+
+.slogan {
+  composes: secondary-font-family from '../../assets/typography.css';
+  color: white;
+  margin-bottom: 70px;
+}
+
+.button {
+  composes: buttons from '../../assets/general.css';
+  width: 140px;
+  height: 42px;
+}

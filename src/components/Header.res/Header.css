@@ -1,9 +1,14 @@
 .common {
   composes: large-page-padding from '../../assets/layout.css';
+  position: fixed;
+  width: 100%;
+  background: ;
   height: 57px;
   display: flex;
   align-items: center;
   border-bottom: 2px solid #777777;
+  background-color: color(white a(80%));
+  z-index: 9999;
 }
 
 .burger {
@@ -23,6 +28,10 @@
   display: flex;
   align-items: center;
   margin-left: 30px;
+}
+
+.phone-link {
+  composes: links from '../../assets/general.css';
 }
 
 .phone {

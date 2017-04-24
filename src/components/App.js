@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import styles from './App.res/style.css';
+import styles from './App.res/App.css';
 
 const App = ({ children }) => {
   return (

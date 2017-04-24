@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import loupeSVG from './SearchBox.res/loupe.svg';
 
-import styles from './SearchBox.res/style.css';
+import styles from './SearchBox.res/SearchBox.css';
 
 const SearchBox = () => (
   <div className={styles.common}>
