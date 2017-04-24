@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url(./fonts/PTS55F.ttf);
+}
+
+@font-face {
+  font-family: "Lemon Tuesday";
+  src: url(./fonts/Lemon Tuesday.otf);
+}
+
+.primary-font-family {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 16px;
+}
+
+.secondary-font-family {
+  font-family: "Lemon Tuesday";
+}

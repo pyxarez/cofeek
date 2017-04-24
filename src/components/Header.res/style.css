@@ -1,0 +1,10 @@
+.common {
+  height: 57px;
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  height: 30px;
+  width: 25px;
+}

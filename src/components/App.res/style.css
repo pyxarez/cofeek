@@ -1,0 +1,4 @@
+.common {
+  height: 100%;
+  composes: primary-font-family from '../../assets/typography.css';
+}
