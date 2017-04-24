@@ -1,10 +1,35 @@
 .common {
+  composes: large-page-padding from '../../assets/layout.css';
   height: 57px;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid #777777;
 }
 
 .burger {
   height: 30px;
   width: 25px;
+  margin-right: 5px;
+}
+
+.logo {
+  position: relative;
+  height: 40px;
+  top: -3px;
+  margin-right: 40px;
+}
+
+.phone-number {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.phone {
+  height: 35px;
+}
+
+.cart {
+  margin-left: 40px;
+  height: 30px;
 }

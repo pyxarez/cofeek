@@ -1,0 +1,5 @@
+.inputs {
+  composes: primary-font-family from './typography.css';
+  border: 1px solid black;
+  outline: none;
+}

@@ -4,7 +4,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      Test Text number two
+      Home.js
     </div>
   );
 };
