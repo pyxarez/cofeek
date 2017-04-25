@@ -1,7 +1,9 @@
+$footer-color: rgb(235, 232, 232);
+
 .common {
   display: flex;
   flex-wrap: wrap;
-  background: rgba(215, 215, 215, 1);
+  background: $footer-color;
   padding: 50px 0 20px 0;
   position: relative;
 
@@ -20,8 +22,8 @@
   border-radius: 100% 100% 0 0;
   content: '';
 
-  background-color: rgba(215, 215, 215, 1);
-  background-image: url('./arrowUp.svg');
+  background-color: $footer-color;
+  background-image: url('./arrowUpBlack.svg');
   background-position: 50% 25%;
   background-size: 20px;
   background-repeat: no-repeat;

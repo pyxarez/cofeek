@@ -1,0 +1,1 @@
+export const TOGGLE_MENU_STATE = 'TOGGLE_MENU_STATE';

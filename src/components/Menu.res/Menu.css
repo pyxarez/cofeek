@@ -1,0 +1,98 @@
+.common {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.87);
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.5s linear;
+}
+
+.visible {
+  composes: common;
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  composes: common;
+  transition: all 0.5s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.close {
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  top: 15px;
+  left: 18px;
+}
+
+/* Social */
+.images {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.twitter, .instagram, .vk, .facebook {
+  composes: images;
+}
+
+.twitter {
+  background-image: url('./twitter.svg');
+}
+
+.instagram {
+  background-image: url('./instagram.svg');
+}
+
+.vk {
+  background-image: url('./vk.svg');
+}
+
+.facebook {
+  background-image: url('./facebook.svg');
+}
+
+.social {
+  margin-bottom: 9%;
+}
+
+/* login  */
+.login-title {
+  composes: links from '../../assets/general.css';
+  font-weight: bold;
+  font-size: 150%;
+  display: flex;
+  align-items: flex-end;
+  margin: 10px 0 auto 0;
+}
+
+.login {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+/* */
+.big-link {
+  composes: links from '../../assets/general.css';
+  font-weight: bold;
+  font-size: 400%;
+  margin-bottom: 50px;
+
+  &:last-of-type {
+    margin-bottom: auto;
+  }
+}

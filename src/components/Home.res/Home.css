@@ -15,4 +15,8 @@
 
 .shop-links {
   margin-bottom: 100px;
+
+  &:last-of-type {
+    margin-bottom: 200px;
+  }
 }

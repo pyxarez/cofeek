@@ -11,10 +11,10 @@ import phoneSVG from './Header.res/phone.svg';
 import cartSVG from './Header.res/cart.svg';
 import logoSVG from '../assets/images/logo.svg';
 
-const Header = ({ children }) => {
+const Header = ({ children, toggleMenuState }) => {
   return (
     <header className={styles.common}>
-      <img src={burgerSVG} className={styles.burger} alt="menu"></img>
+      <img src={burgerSVG} onClick={toggleMenuState} className={styles.visible} alt="menu"/>
       <img src={logoSVG} className={styles.logo} alt="logo"/>
       <SearchBox/>
       <span className={styles.phoneNumber}>
