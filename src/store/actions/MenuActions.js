@@ -1,4 +1,4 @@
-import { TOGGLE_MENU_STATE } from '../constants/menu';
+import { TOGGLE_MENU_STATE } from '../constants/Menu';
 
 const toggleMenuState = () => {
   return {

@@ -1,0 +1,96 @@
+$cart-width: 375px;
+$glob-padding: 20px;
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px 0 15px $glob-padding;
+  border-bottom: 1px solid color(black a(90%));
+}
+
+.continue-shopping {
+  cursor: pointer;
+}
+
+.image-close {
+  height: 22px;
+  width: 22px;
+  margin-right: 12px;
+}
+
+.bold-span {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+/* most important part */
+.panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  background: white;
+  height: 100vh;
+  width: $cart-width;
+  transition: right 0.3s ease-out;
+}
+
+.panel-visible {
+  composes: panel;
+  right: 0;
+}
+
+.panel-hidden {
+  composes: panel;
+  right: -$cart-width;
+}
+
+/* background */
+.fill {
+  z-index: 9998;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: color(white a(50%));
+  transition: opacity 0.3s ease-out;
+}
+
+.fill-visible {
+  composes: fill;
+  visibility: visible;
+  opacity: 1;
+}
+
+.fill-hidden {
+  composes: fill;
+  transition: all 0.5s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* products */
+.product-list {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.cost-wrapper {
+  border-top: 1px solid color(black a(90%)); 
+  padding: 40px $glob-padding 100px $glob-padding;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.cost-label {
+  flex: 1;
+  font-weight: bold;
+  font-size: 18px;
+  max-width: 100%;
+}
+
+.checkout {
+  composes: buttons from '../../assets/general.css';
+  height: 40px;
+  font-size: 101%;
+  margin-top: 30px;
+}

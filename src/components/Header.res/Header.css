@@ -1,7 +1,7 @@
 .common {
   composes: large-page-padding from '../../assets/layout.css';
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background: ;
   height: 57px;
   display: flex;
@@ -17,6 +17,7 @@
   width: 25px;
   margin-right: 5px;
   transition: opacity 0.5s linear;
+  cursor: pointer;
 }
 
 .visible {
@@ -55,4 +56,5 @@
 .cart {
   margin-left: 40px;
   height: 30px;
+  cursor: pointer;
 }

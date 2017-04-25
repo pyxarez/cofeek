@@ -1,6 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
 import SearchBox from './SearchBox';
 
@@ -11,7 +10,7 @@ import phoneSVG from './Header.res/phone.svg';
 import cartSVG from './Header.res/cart.svg';
 import logoSVG from '../assets/images/logo.svg';
 
-const Header = ({ children, toggleMenuState }) => {
+const Header = ({ toggleMenuState, toggleCartState }) => {
   return (
     <header className={styles.common}>
       <img src={burgerSVG} onClick={toggleMenuState} className={styles.visible} alt="menu"/>
@@ -21,8 +20,14 @@ const Header = ({ children, toggleMenuState }) => {
         <img src={phoneSVG} className={styles.phone} alt="phone"/>
         <a className={styles.phoneLink} href='tel:8-800-555-35-35'> 8 800 555-35-35</a>
       </span>
-      <img src={cartSVG} className={styles.cart} alt="phone"/>
+      <img src={cartSVG} className={styles.cart} onClick={toggleCartState} alt="cart"/>
     </header>
   );
 };
+
+Header.PropTypes = {
+  toggleMenuState: PropTypes.func.isRequired,
+  toggleCartState: PropTypes.func.isRequired
+}
+
 export default Header;

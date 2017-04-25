@@ -10,10 +10,14 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import App from './components/App';
 import Home from './components/Home';
 
+import { listenToCart } from './store/actions/CartActions';
+
 import './index.css';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
+
+store.dispatch(listenToCart());
 
 ReactDOM.render(
   <Provider store={store}>
