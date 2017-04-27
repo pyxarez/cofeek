@@ -16,7 +16,7 @@ const CartProduct = ({
   url,
   increaseCount,
   decreaseCount,
-  deleteItem,
+  deleteProduct,
   toggleCart
 }) => {
   return (
@@ -31,7 +31,7 @@ const CartProduct = ({
           <span>{cost}.00 руб.</span>
         </div>
       </div>
-      <img className={styles.deleteItem} src={closeSVG} onClick={deleteItem} alt="deleteItem"/>
+      <img className={styles.deleteItem} src={closeSVG} onClick={deleteProduct} alt="deleteProduct"/>
     </div>
   );
 };
@@ -44,7 +44,7 @@ CartProduct.PropTypes = {
   url: PropTypes.string.isRequired,
   increaseCount: PropTypes.func,
   decreaseCount: PropTypes.func,
-  deleteItem: PropTypes.func,
+  deleteProduct: PropTypes.func,
   toggleCart: PropTypes.func
 }
 

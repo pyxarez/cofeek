@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CartProduct from './CartProduct';
+import CartProductContainer from '../containers/CartProduct';
+
+import { toArray } from '../utils/helpers';
 
 import arrowLeftSVG from '../assets/images/goBackArrow.svg';
 import styles from './Cart.res/Cart.css';
 
 const Cart = ({ cart, toggleCartState }) => {
+  const products = toArray(cart.products);
+
   return (
     <section className={cart.state ? styles.fillVisible : styles.fillHidden}>
       <div className={cart.state ? styles.panelVisible : styles.panelHidden}>
@@ -18,9 +22,9 @@ const Cart = ({ cart, toggleCartState }) => {
         </header>
 
         <section className={styles.productList}>
-          {cart.products.length > 0
-            && cart.products.map(product =>
-              <CartProduct
+          {products.length > 0
+            && products.map(product =>
+              <CartProductContainer 
                 key={product.id}
                 id={product.id}
                 name={product.name} 

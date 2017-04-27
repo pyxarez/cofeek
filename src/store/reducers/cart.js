@@ -1,20 +1,29 @@
 import {
   TOGGLE_CART_STATE,
   CART_RECEIVE_DATA,
-  CART_RECEIVE_DATA_ERROR
+  CART_RECEIVE_DATA_ERROR,
+  ADD_PRODUCT_TO_CART,
+  DELETE_PRODUCT_FROM_CART,
+  INCREASE_ITEM_COUNT,
+  DECREASE_ITEM_COUNT,
 } from '../constants/Cart';
 
-import { toArray } from '../../utils/helpers';
+import {
+  toArray, 
+  filterObject, 
+  increaseTargetCount, 
+  decreaseTargetCount 
+} from '../../utils/helpers';
 
 const initialState = {
   state: false,
   hasReceivedData: false,
   errorMessage: '',
-  products: [],
+  products: {},
   totalCost: 0
 }
 
-const cart = (state = initialState, { type, payload }) => {
+const cart = ( state = initialState, { type, payload } ) => {
   switch(type) {
     case TOGGLE_CART_STATE:
       return {
@@ -25,17 +34,54 @@ const cart = (state = initialState, { type, payload }) => {
       return {
         ...state,
         hasReceivedData: true,
-        products: toArray(payload.data),
+        products: payload.data,
         errorMessage: '',
-        totalCost: toArray(payload.data).reduce((sum, product) => sum + product.cost, 0)
+        totalCost: toArray(payload.data).reduce((sum, product) => sum + (product.cost * product.count), 0)
       };
     case CART_RECEIVE_DATA_ERROR:
       return {
         ...state,
-        products: null,
+        products: {},
         hasReceivedData: false,
         errorMessage: payload.message
-      }
+      };
+    case ADD_PRODUCT_TO_CART:
+      return {
+        ...state,
+        products: {
+          ...state.products,
+          [payload.data.id]: {
+            ...payload.data,
+            count: state.products[payload.data.id]
+              ? state.products[payload.data.id].count + 1
+              : 1
+          },
+        },
+        totalCost: state.totalCost + payload.data.cost
+      };
+    case DELETE_PRODUCT_FROM_CART:
+      return {
+        ...state,
+        products: filterObject(state.products, payload.data),
+        totalCost: state.totalCost - (payload.data.count * payload.data.cost),
+      };
+    case INCREASE_ITEM_COUNT:
+      return {
+        ...state,
+        products: {
+          ...state.products,
+          [payload.data.id]: {
+            ...payload.data,
+            count: state.products[payload.data.id].count + 1
+          }
+        },
+        totalCost: state.totalCost + payload.data.cost
+      };
+    case DECREASE_ITEM_COUNT:
+      return {
+        ...state,
+        products: decreaseTargetCount(state.products, payload.data)
+      };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Product from './Product';
+import ProductContainer from '../containers/Product';
 
 import styles from './Products.res/Products.css'
 
@@ -10,7 +10,7 @@ const Products = ({ products }) => {
     <section className={styles.common}>
       <h1 className={styles.title}>Товары в нашем магазине</h1>
       {products.data.map(product =>
-        <Product 
+        <ProductContainer
           key={product.id}
           id={product.id} 
           name={product.name}

@@ -10,7 +10,9 @@ const mapStateToProps = ({ cart }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleCartState: bindActionCreators(toggleCartState, dispatch)
+  ...bindActionCreators({
+    toggleCartState,
+  }, dispatch)
 });
 
 const CartContainer = connect(
