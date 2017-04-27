@@ -6,6 +6,10 @@ import { toggleCartState } from '../store/actions/CartActions';
 
 import Header from '../components/Header';
 
+const mapStateToProps = ({ menu }) => ({
+  menu
+});
+
 const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators({
     toggleCartState,
@@ -14,7 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const HeaderContainer = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Header);
 

@@ -16,7 +16,7 @@
   height: 30px;
   width: 25px;
   margin-right: 5px;
-  transition: opacity 0.5s linear;
+  transition: opacity 0.3s linear;
   cursor: pointer;
 }
 

@@ -10,10 +10,10 @@ import phoneSVG from './Header.res/phone.svg';
 import cartSVG from './Header.res/cart.svg';
 import logoSVG from '../assets/images/logo.svg';
 
-const Header = ({ toggleMenuState, toggleCartState }) => {
+const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (
     <header className={styles.common}>
-      <img src={burgerSVG} onClick={toggleMenuState} className={styles.visible} alt="menu"/>
+      <img src={burgerSVG} onClick={toggleMenuState} className={menu ? styles.hidden : styles.visible} alt="menu"/>
       <img src={logoSVG} className={styles.logo} alt="logo"/>
       <SearchBox/>
       <span className={styles.phoneNumber}>
@@ -26,6 +26,7 @@ const Header = ({ toggleMenuState, toggleCartState }) => {
 };
 
 Header.PropTypes = {
+  menu: PropTypes.bool.isRequired,
   toggleMenuState: PropTypes.func.isRequired,
   toggleCartState: PropTypes.func.isRequired
 }

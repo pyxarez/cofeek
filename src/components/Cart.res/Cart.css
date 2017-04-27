@@ -71,7 +71,7 @@ $glob-padding: 20px;
 /* products */
 .product-list {
   flex: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .cost-wrapper {
