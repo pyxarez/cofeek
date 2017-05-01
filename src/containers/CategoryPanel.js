@@ -3,21 +3,21 @@ import { bindActionCreators } from 'redux';
 
 import { toggleCategories } from '../store/actions/ShopActions';
 
-import Shop from '../components/Shop';
+import CategoryPanel from '../components/CategoryPanel';
 
 const mapStateToProps = ({ shop }) => ({
   shop
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
     toggleCategories,
   }, dispatch)
 });
 
-const ShopContainer = connect(
+const CategoryPanelContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Shop);
+)(CategoryPanel);
 
-export default ShopContainer;
+export default CategoryPanelContainer;

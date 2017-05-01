@@ -8,12 +8,14 @@ import Product from '../components/Product';
 import { addProductToCart } from '../store/actions/CartActions';
 
 class ProductContainer extends Component {
-  static PropTypes = {
+  static propTypes = {
     addProductToCart: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     name: PropTypes.string.isRequired,
     cost: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    subcategory: PropTypes.string.isRequired,
   }
 
   addProductToCart = () => {
@@ -21,14 +23,18 @@ class ProductContainer extends Component {
       id,
       name,
       cost,
-      url
+      url,
+      category,
+      subcategory,
     } = this.props;
     this.props.addProductToCart({
       id,
       name,
       cost,
       url,
-      count: 1
+      count: 1,
+      category,
+      subcategory,
     });
   }
 

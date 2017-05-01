@@ -1,0 +1,26 @@
+.common {
+  margin-bottom: 200px;
+}
+
+.header {
+  padding: 100px 20px 0 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  composes: big-title from '../../assets/typography.css';
+}
+
+.categories-opener {
+  composes: buttons from '../../assets/general.css';
+  width: 140px;
+  height: 40px;
+}
+
+.sort {
+  width: 140px;
+  text-align: center;
+}

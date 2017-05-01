@@ -17,13 +17,13 @@ const products = (state = initialState, { type, payload }) => {
         hasReceivedData: true,
         errorMessage: '',
         data: payload.data
-      }
+      };
     case PRODUCTS_RECEIVE_DATA_ERROR:
       return {
         ...state,
         hasReceivedData: false,
         errorMessage: payload.message
-      }
+      };
     default:
       return state;
   }

@@ -12,12 +12,13 @@ const Home = () => {
   return (
     <main className={styles.common}>
       <Banner />
-      <ProductsContainer />
+      <h1 className={styles.title}>Товары в нашем магазине</h1>
+      <ProductsContainer count={6}/>
       <section className={styles.shopLinks}>
         <h1 className={styles.shopTitle}>~ Магазин ~</h1>
-        <Link to='shop' className={styles.shopLink}>Кофе</Link>
-        <Link to='shop' className={styles.shopLink}>Чай</Link>
-        <Link to='shop' className={styles.shopLink}>Принадлежности</Link>
+        <Link to='/shop/coffee/all' className={styles.shopLink}>Кофе</Link>
+        <Link to='/shop/tea/all' className={styles.shopLink}>Чай</Link>
+        <Link to='/shop/gear/all' className={styles.shopLink}>Принадлежности</Link>
       </section>
     </main>
   );

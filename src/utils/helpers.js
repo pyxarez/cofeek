@@ -7,7 +7,12 @@ const accumToArrayAndHandle = convertingFunc => {
     if (currLevel === levels - 1) {
       accum.push(...convertingFunc(object));
     } else {
-      convertingFunc(object).forEach(nested => f(nested, levels, currLevel + 1, accum))
+      convertingFunc(object)
+        .forEach(nested => {
+          if (typeof nested === 'object') {
+            f(nested, levels, currLevel + 1, accum)
+          }
+        })
     }
     
     return accum;

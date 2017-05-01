@@ -37,6 +37,7 @@
   height: 40px;
   top: -3px;
   margin-right: 40px;
+  cursor: pointer;
 }
 
 .phone-number {

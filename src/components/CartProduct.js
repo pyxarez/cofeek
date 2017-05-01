@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import toggleCart from '../store/actions/CartActions';
-
 import addSVG from './CartProduct.res/add.svg';
 import deleteSVG from './CartProduct.res/delete.svg';
 import closeSVG from '../assets/images/close.svg';
@@ -36,8 +34,8 @@ const CartProduct = ({
   );
 };
 
-CartProduct.PropTypes = {
-  id: PropTypes.number.isRequired,
+CartProduct.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   cost: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,  

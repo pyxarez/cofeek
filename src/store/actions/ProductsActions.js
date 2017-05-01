@@ -21,10 +21,20 @@ const gettingProductsItemsFailure = (error) => ({
   }
 });
 
-export const listenToProducts = () => {
+export const listenToProducts = requestedItem => {
   return async (dispatch) => {
     try {
-      const snapshot = await productsRef.once('value');
+      let snapshot;
+
+      if (typeof requestedItem === 'undefined') {
+        snapshot = await productsRef.once('value');
+      } else {
+        const requestRef = requestedItem.type
+          ? database.ref(`products/${requestedItem.category}/${requestedItem.type}`)
+          : database.ref(`products/${requestedItem.category}`);
+        snapshot = await requestRef.once('value');
+      }
+
       dispatch(gettingProductsItemsSuccess(snapshot));
     } catch(error) {
       dispatch(gettingProductsItemsFailure(error));

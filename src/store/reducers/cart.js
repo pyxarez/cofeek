@@ -11,7 +11,6 @@ import {
 import {
   toArray, 
   filterObject, 
-  increaseTargetCount, 
   decreaseTargetCount 
 } from '../../utils/helpers';
 
@@ -80,7 +79,8 @@ const cart = ( state = initialState, { type, payload } ) => {
     case DECREASE_ITEM_COUNT:
       return {
         ...state,
-        products: decreaseTargetCount(state.products, payload.data)
+        products: decreaseTargetCount(state.products, payload.data),
+        totalCost: state.totalCost - payload.data.cost
       };
     default:
       return state;

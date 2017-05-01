@@ -1,0 +1,50 @@
+.common {
+  margin: 0 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid color(black a(30%));
+}
+
+.expand-button {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.main-category-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 120%;
+}
+
+.category-list {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.category-list-expanded {
+  composes: category-list;
+  transform: scaleY(1);
+}
+
+.category-list-closed {
+  composes: category-list;
+  height: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.category-wrapper {
+  list-style: none;
+  padding: 10px 0 10px 20px;
+}
+
+.nested-category-title {
+  text-decoration: none;
+  color: dimgray;
+}
+
+.active-link {
+  color: color(black a(%50));
+}

@@ -24,3 +24,39 @@
     box-shadow:inset 0 2px 0px rgba(0,0,0,.1),  0 2px 0px rgba(255,255,255,.4), inset 0 0px 20px rgba(0,0,0,.2);
   }
 }
+
+.slide-panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  background: white;
+  height: 100vh;
+  width: 375px;
+  transition: right 0.3s ease-out;
+}
+
+/* white fixed background */
+.fill-bg {
+  z-index: 9998;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: color(white a(50%));
+  transition: opacity 0.3s ease-out;
+  left: 0;
+  top: 0;
+}
+
+.fill-bg-visible {
+  composes: fill-bg;
+  visibility: visible;
+  opacity: 1;
+}
+
+.fill-bg-hidden {
+  composes: fill-bg;
+  transition: all 0.5s linear;
+  opacity: 0;
+  visibility: hidden;
+}

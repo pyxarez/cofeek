@@ -4,11 +4,22 @@
   background: color(grey a(10%));
   margin: 0 20px 20px 20px;
   padding: 20px;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .title {
   font-size: 150%;
+}
+
+.product-link {
+  text-decoration: none;
+  color: black;
+}
+
+.product-name {
+  &:hover {
+    color: color(black a(80%));
+  }
 }
 
 .product-cost {
@@ -17,6 +28,7 @@
 }
 
 .add-to-cart {
+  cursor: pointer;
 
   &:hover {
     color: color(black a(80%));

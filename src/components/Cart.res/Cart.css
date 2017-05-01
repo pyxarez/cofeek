@@ -25,14 +25,8 @@ $glob-padding: 20px;
 
 /* most important part */
 .panel {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  background: white;
-  height: 100vh;
+  composes: slide-panel from '../../assets/general.css';
   width: $cart-width;
-  transition: right 0.3s ease-out;
 }
 
 .panel-visible {
@@ -43,29 +37,6 @@ $glob-padding: 20px;
 .panel-hidden {
   composes: panel;
   right: -$cart-width;
-}
-
-/* background */
-.fill {
-  z-index: 9998;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: color(white a(50%));
-  transition: opacity 0.3s ease-out;
-}
-
-.fill-visible {
-  composes: fill;
-  visibility: visible;
-  opacity: 1;
-}
-
-.fill-hidden {
-  composes: fill;
-  transition: all 0.5s linear;
-  opacity: 0;
-  visibility: hidden;
 }
 
 /* products */

@@ -7,12 +7,13 @@ import { toArray } from '../utils/helpers';
 
 import arrowLeftSVG from '../assets/images/goBackArrow.svg';
 import styles from './Cart.res/Cart.css';
+import background from '../assets/general.css';
 
 const Cart = ({ cart, toggleCartState }) => {
   const products = toArray(cart.products);
 
   return (
-    <section className={cart.state ? styles.fillVisible : styles.fillHidden}>
+    <section className={cart.state ? background.fillBgVisible : background.fillBgHidden}>
       <div className={cart.state ? styles.panelVisible : styles.panelHidden}>
         <header className={styles.header}>
           <div className={styles.continueShopping} onClick={toggleCartState} >
@@ -47,12 +48,12 @@ const Cart = ({ cart, toggleCartState }) => {
   );
 };
 
-Cart.PropTypes = {
+Cart.propTypes = {
   cart: PropTypes.shape({
     state: PropTypes.bool.isRequired,
     hasReceivedData: PropTypes.bool.isRequired,
     errorMessage: PropTypes.string.isRequired,
-    products: PropTypes.array.isRequired,
+    products: PropTypes.object.isRequired,
     totalCost: PropTypes.number.isRequired,
   }),
   toggleCartState: PropTypes.func.isRequired,

@@ -74,6 +74,7 @@ export const listenToCart = (user) => {
       const ref = database.ref(`users/${user.uid}/cart`);
       const snapshot = await ref.once('value');
       const data = snapshot.val();
+      
       if (data !== null) {
         dispatch(gettingCartItemsSuccess(data));
       } else {
@@ -153,7 +154,6 @@ export const increaseItemCount = product =>
 export const decreaseItemCount = product => 
   async (dispatch, getState) => {
     try {
-      const pathToProduct = `cart/${product.id}`;
       const { cart } = getState();
       const ref = database.ref(`users/${auth.currentUser.uid}`);
       const updates = cart.products[product.id].count === 1

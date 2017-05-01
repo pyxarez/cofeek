@@ -12,11 +12,14 @@ import {
 } from '../store/actions/CartActions';
 
 class CartProductContainer extends Component {
-  static PropTypes = {
+  static propTypes = {
     increaseItemCount: PropTypes.func.isRequired,
     deleteProductFromCart: PropTypes.func.isRequired,
     decreaseItemCount: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string
+    ]).isRequired,
     name: PropTypes.string.isRequired,
     cost: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,

@@ -18,9 +18,9 @@ const Menu = ({ menu, toggleMenuState }) => {
         Войти
       </Link>
 
-      <Link to='home' className={styles.bigLink}>Домой</Link>
-      <Link to='shop' className={styles.bigLink}>Магазин</Link>
-      <Link to='about' className={styles.bigLink}>О нас</Link>
+      <Link to='/home' onClick={toggleMenuState} className={styles.bigLink}>Домой</Link>
+      <Link to='/shop/coffee/all' onClick={toggleMenuState} className={styles.bigLink}>Магазин</Link>
+      <Link to='/about' onClick={toggleMenuState} className={styles.bigLink}>О нас</Link>
 
       <div className={styles.social}>
         <a className={styles.twitter} href="https://www.twitter.com"/>
@@ -32,7 +32,7 @@ const Menu = ({ menu, toggleMenuState }) => {
   );
 };
 
-Menu.PropTypes = {
+Menu.propTypes = {
   menu: PropTypes.bool.isRequired,
   toggleMenuState: PropTypes.func.isRequired
 }

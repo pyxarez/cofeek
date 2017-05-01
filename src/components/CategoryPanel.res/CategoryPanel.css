@@ -1,0 +1,33 @@
+$panel-width: 375px;
+
+.panel {
+  composes: slide-panel from '../../assets/general.css';
+  transition: left 0.3s ease-out;
+  width: $panel-width;
+}
+
+.panel-visible {
+  composes: panel;
+  left: 0;
+}
+
+.panel-hidden {
+  composes: panel;
+  left: -$panel-width;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 20px 20px;
+  border-bottom: 1px solid color(black a(30%));
+}
+
+.close-panel {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+

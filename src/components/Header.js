@@ -25,7 +25,7 @@ const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   );
 };
 
-Header.PropTypes = {
+Header.propTypes = {
   menu: PropTypes.bool.isRequired,
   toggleMenuState: PropTypes.func.isRequired,
   toggleCartState: PropTypes.func.isRequired

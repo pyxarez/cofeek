@@ -9,11 +9,11 @@ import { listenToProducts } from '../store/actions/ProductsActions';
 import { transformToNotNestedArray } from '../utils/helpers';
 
 export class ProductsContainer extends Component {
-  static PropTypes = {
+  static propTypes = {
     products: PropTypes.shape({
       hasReceivedData: PropTypes.bool.isRequired,
       errorMessage: PropTypes.string.isRequired,
-      products: PropTypes.object.isRequired,
+      data: PropTypes.object.isRequired,
     }),
     listenToProducts: PropTypes.func.isRequired,
   }
@@ -23,10 +23,11 @@ export class ProductsContainer extends Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, count } = this.props;
     const newProducts = {...products};
-    newProducts.data = transformToNotNestedArray(newProducts.data);
-    newProducts.data.length = 6;
+
+    newProducts.data = transformToNotNestedArray(newProducts.data, 3);
+    if (typeof count !== 'undefined') newProducts.data.length = count;
 
     return <Products products={newProducts}/>
   }
