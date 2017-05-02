@@ -8,7 +8,7 @@ import Products from '../components/Products';
 import { listenToProducts } from '../store/actions/ProductsActions';
 import { transformToNotNestedArray } from '../utils/helpers';
 
-export class ProductsContainer extends Component {
+export class HomeProductsContainer extends Component {
   static propTypes = {
     products: PropTypes.shape({
       hasReceivedData: PropTypes.bool.isRequired,
@@ -41,4 +41,4 @@ const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators({ listenToProducts }, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);;
+export default connect(mapStateToProps, mapDispatchToProps)(HomeProductsContainer);;

@@ -16,6 +16,7 @@
 
 .categories-opener {
   composes: buttons from '../../assets/general.css';
+  font-size: 101%;
   width: 140px;
   height: 40px;
 }

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import ShopProductsContainer from '../containers/ShopProducts';
 import CategoryPanelContainer from '../containers/CategoryPanel';
+import AddedPanelContainer from '../containers/AddedPanel';
 
 import styles from './Shop.res/Shop.css';
 
 const Shop = ({ categoryPanelState, toggleCategories, params }) => {
   return (
     <section className={ styles.common }>
+      <AddedPanelContainer />
       <header className={ styles.header }>
         <button className={ styles.categoriesOpener } onClick={ toggleCategories }>Категории</button>
         <h1 className={ styles.title }>Магазин</h1>

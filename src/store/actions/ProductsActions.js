@@ -29,8 +29,8 @@ export const listenToProducts = requestedItem => {
       if (typeof requestedItem === 'undefined') {
         snapshot = await productsRef.once('value');
       } else {
-        const requestRef = requestedItem.type
-          ? database.ref(`products/${requestedItem.category}/${requestedItem.type}`)
+        const requestRef = requestedItem.subcategory
+          ? database.ref(`products/${requestedItem.category}/${requestedItem.subcategory}`)
           : database.ref(`products/${requestedItem.category}`);
         snapshot = await requestRef.once('value');
       }

@@ -22,6 +22,10 @@
   }
 }
 
+.product-image {
+  max-width: 470px;
+}
+
 .product-cost {
   display: block;
   margin: 5px 0 20px 0;

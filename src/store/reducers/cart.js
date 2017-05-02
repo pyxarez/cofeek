@@ -1,5 +1,6 @@
 import {
   TOGGLE_CART_STATE,
+  TOGGLE_ADDED_PANEL_STATE,
   CART_RECEIVE_DATA,
   CART_RECEIVE_DATA_ERROR,
   ADD_PRODUCT_TO_CART,
@@ -16,6 +17,7 @@ import {
 
 const initialState = {
   state: false,
+  addedPanelState: false,
   hasReceivedData: false,
   errorMessage: '',
   products: {},
@@ -52,11 +54,11 @@ const cart = ( state = initialState, { type, payload } ) => {
           [payload.data.id]: {
             ...payload.data,
             count: state.products[payload.data.id]
-              ? state.products[payload.data.id].count + 1
-              : 1
+              ? state.products[payload.data.id].count + payload.data.count
+              : payload.data.count
           },
         },
-        totalCost: state.totalCost + payload.data.cost
+        totalCost: state.totalCost + (payload.data.cost * payload.data.count) 
       };
     case DELETE_PRODUCT_FROM_CART:
       return {
@@ -81,6 +83,11 @@ const cart = ( state = initialState, { type, payload } ) => {
         ...state,
         products: decreaseTargetCount(state.products, payload.data),
         totalCost: state.totalCost - payload.data.cost
+      };
+    case TOGGLE_ADDED_PANEL_STATE:
+      return {
+        ...state,
+        addedPanelState: !state.addedPanelState,
       };
     default:
       return state;

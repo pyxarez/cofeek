@@ -1,5 +1,6 @@
 import {
   TOGGLE_CART_STATE,
+  TOGGLE_ADDED_PANEL_STATE,
   CART_RECEIVE_DATA,
   CART_RECEIVE_DATA_ERROR,
   ADD_PRODUCT_TO_CART,
@@ -64,7 +65,11 @@ const decreaseItemCountSuccess = item => ({
 });
 
 export const toggleCartState = () => ({
-    type: TOGGLE_CART_STATE
+  type: TOGGLE_CART_STATE
+});
+
+export const toggleAddedPanelState = () => ({
+  type: TOGGLE_ADDED_PANEL_STATE
 });
 
 //Action creators
@@ -101,7 +106,9 @@ export const addProductToCart = product =>
         };
 
         await ref.update(updates);
-        dispatch(addingCartProductSuccess(product));
+        dispatch( addingCartProductSuccess(product) );
+        dispatch( toggleAddedPanelState() );
+        setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
       } else {
         const updates = {
          [`/${product.id}`]: {
@@ -110,7 +117,9 @@ export const addProductToCart = product =>
         };
 
         await ref.update(updates);
-        dispatch(addingCartProductSuccess(product));
+        dispatch( addingCartProductSuccess(product) );
+        dispatch( toggleAddedPanelState() );
+        setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
       }
     } catch(error) {
       console.error(`addingProductFailure: ${error}`);

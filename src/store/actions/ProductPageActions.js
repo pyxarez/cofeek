@@ -1,14 +1,17 @@
 import {
   PRODUCTPAGE_RECEIVE_DATA,
-  PRODUCTPAGE_RECEIVE_DATA_ERROR
+  PRODUCTPAGE_RECEIVE_DATA_ERROR,
+  INCREASE_PRODUCT_COUNT,
+  DECREASE_PRODUCT_COUNT,
 } from '../constants/ProductPage';
 
 import { database } from '../../firebaseApp.js';
+import { push } from 'react-router-redux';
 
 const gettingProductDataSuccess = value => ({
   type: PRODUCTPAGE_RECEIVE_DATA,
   payload: {
-    data: value
+    ...value
   }
 });
 
@@ -17,6 +20,14 @@ const gettingProductDataFailure = error => ({
   payload: {
     message: error.message
   }
+});
+
+export const increaseProductCount = () => ({
+  type: INCREASE_PRODUCT_COUNT
+});
+
+export const decreaseProductCount = () => ({
+  type: DECREASE_PRODUCT_COUNT
 });
 
 export const getProductData = ({ category, subcategory, id }) =>
@@ -33,4 +44,3 @@ export const getProductData = ({ category, subcategory, id }) =>
       dispatch( gettingProductDataFailure(error) );
     }
   };
-

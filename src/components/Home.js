@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import Banner from './Banner';
 
-import ProductsContainer from '../containers/Products';
+import HomeProductsContainer from '../containers/HomeProducts';
 
 import styles from './Home.res/Home.css';
 
@@ -13,7 +13,7 @@ const Home = () => {
     <main className={styles.common}>
       <Banner />
       <h1 className={styles.title}>Товары в нашем магазине</h1>
-      <ProductsContainer count={6}/>
+      <HomeProductsContainer count={6}/>
       <section className={styles.shopLinks}>
         <h1 className={styles.shopTitle}>~ Магазин ~</h1>
         <Link to='/shop/coffee/all' className={styles.shopLink}>Кофе</Link>

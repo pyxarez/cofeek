@@ -1,0 +1,25 @@
+$panel-height: 100px;
+
+.panel {
+  composes: secondary-font-family from '../../assets/typography.css';
+  position: fixed;
+  line-height: 100px;
+  height: $panel-height;
+  font-size: 250%;
+  width: 100%;
+  background: black;
+  text-align: center;
+  z-index: 9999;
+  left:0;
+  transition: top 0.1s ease-out;
+}
+
+.panel-visible {
+  composes: panel;
+  top: 0;
+}
+
+.panel-hidden {
+  composes: panel;
+  top: -$panel-height;
+}

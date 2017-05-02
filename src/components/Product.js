@@ -8,7 +8,7 @@ const Product = ({ addProductToCart, name, cost, url, id, category, subcategory 
   return (
     <div className={styles.common}>
       <Link className={ styles.productLink } to={`/product/${category}/${subcategory}/${id}`} >
-        <img src={url} alt='product'/>
+        <img className={ styles.productImage }src={url} alt='product'/>
         <h1 className={styles.productName}>{name}</h1>
         <span className={styles.productCost}>{cost}  руб.</span>
       </Link> 

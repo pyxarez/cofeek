@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 
 import Product from '../components/Product';
 
-import { addProductToCart } from '../store/actions/CartActions';
+import {
+  addProductToCart,
+  toggleAddedPanelState
+} from '../store/actions/CartActions';
 
 class ProductContainer extends Component {
   static propTypes = {
@@ -35,16 +38,19 @@ class ProductContainer extends Component {
       count: 1,
       category,
       subcategory,
-    });
+    })
   }
 
   render() {
-    return <Product {...this.props} addProductToCart={this.addProductToCart}/>
+    return <Product { ...this.props } addProductToCart={ this.addProductToCart }/>
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators({ addProductToCart }, dispatch)
+  ...bindActionCreators({
+    addProductToCart,
+    toggleAddedPanelState
+  }, dispatch)
 });
 
 export default connect(null, mapDispatchToProps)(ProductContainer);
