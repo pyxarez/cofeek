@@ -1,4 +1,4 @@
-$footer-color: rgb(235, 232, 232);
+$footer-color: white;
 
 .common {
   display: flex;
@@ -6,14 +6,14 @@ $footer-color: rgb(235, 232, 232);
   background: $footer-color;
   padding: 50px 0 20px 0;
   position: relative;
-
+  border-top: 1px solid black;
 }
 
 .scroll-top {
   $h: 80px;
   $w: 90px;
 
-  z-index: -1;
+  /*z-index: -1;*/
   width: $w;
   height: $h;
   position: absolute;
@@ -21,12 +21,25 @@ $footer-color: rgb(235, 232, 232);
   left: calc(50% - $w / 2);
   border-radius: 100% 100% 0 0;
   content: '';
+  cursor: pointer;
+  border: 1px solid black;
 
   background-color: $footer-color;
   background-image: url('./arrowUpBlack.svg');
   background-position: 50% 25%;
   background-size: 20px;
   background-repeat: no-repeat;
+
+  &:after {
+    content: '';
+    display: block;
+    height: calc($h / 2);
+    width: $w;
+    background: white;
+    position: absolute;
+    top: calc(($h / 2) - 1px);
+    left: -1px;
+  }
 }
 
 .link {
@@ -65,17 +78,19 @@ $footer-color: rgb(235, 232, 232);
 }
 
 .mail-input {
-  composes: inputs from '../../assets/general.css';
+  /*composes: inputs from '../../assets/general.css';*/
+  composes: decorated-input from '../../assets/general.css';
+  margin: 0;
   border: 1px solid gray;
-  height: 38px;
   width: 230px;
 }
 
 .mail-button {
   composes: inputs from '../../assets/general.css';
   width: 55px;
-  height: auto;
+  height: 38px;
   border-radius: 0 5px 5px 0;
+  cursor: pointer;
 
   background-color: white;
   background-image: url('./mails.svg');

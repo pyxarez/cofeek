@@ -7,6 +7,7 @@ import {
   DELETE_PRODUCT_FROM_CART,
   INCREASE_ITEM_COUNT,
   DECREASE_ITEM_COUNT,
+  CLEAR_CART,
 } from '../constants/Cart';
 import { database, auth } from '../../firebaseApp.js';
 import { filterObject } from '../../utils/helpers';
@@ -72,7 +73,25 @@ export const toggleAddedPanelState = () => ({
   type: TOGGLE_ADDED_PANEL_STATE
 });
 
-//Action creators
+export const clearCartSuccess = () => ({
+  type: CLEAR_CART,
+});
+
+export const clearCart  = () =>
+  async dispatch => {
+    try {
+      const ref = database.ref(`users/${auth.currentUser.uid}`);
+      const updates = {
+        '/cart': {}
+      };
+
+      await ref.update(updates);
+      dispatch( clearCartSuccess() );
+    } catch(error) {
+      console.error(`clearCartSuccess error ${error}`);
+    }
+  }
+
 export const listenToCart = (user) => {
   return async (dispatch) => {
     try {
@@ -109,6 +128,7 @@ export const addProductToCart = product =>
         dispatch( addingCartProductSuccess(product) );
         dispatch( toggleAddedPanelState() );
         setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
+        return;
       } else {
         const updates = {
          [`/${product.id}`]: {
@@ -120,6 +140,7 @@ export const addProductToCart = product =>
         dispatch( addingCartProductSuccess(product) );
         dispatch( toggleAddedPanelState() );
         setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
+        return;
       }
     } catch(error) {
       console.error(`addingProductFailure: ${error}`);

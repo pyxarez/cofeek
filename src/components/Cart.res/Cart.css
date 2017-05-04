@@ -64,4 +64,8 @@ $glob-padding: 20px;
   height: 40px;
   font-size: 101%;
   margin-top: 30px;
+  text-decoration: none;
+  line-height: 38px;
+  color: black;
+  text-align: center;
 }

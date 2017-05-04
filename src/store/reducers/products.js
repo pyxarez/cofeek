@@ -1,6 +1,7 @@
 import {
   PRODUCTS_RECEIVE_DATA,
-  PRODUCTS_RECEIVE_DATA_ERROR
+  PRODUCTS_RECEIVE_DATA_ERROR,
+  CLEAR_PRODUCTS,
 } from '../constants/Products';
 
 const initialState = {
@@ -24,6 +25,11 @@ const products = (state = initialState, { type, payload }) => {
         hasReceivedData: false,
         errorMessage: payload.message
       };
+    case CLEAR_PRODUCTS:
+      return {
+        ...state,
+        data: {}
+      }
     default:
       return state;
   }

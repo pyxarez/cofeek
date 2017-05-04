@@ -3,6 +3,7 @@ import {
   PRODUCTPAGE_RECEIVE_DATA_ERROR,
   INCREASE_PRODUCT_COUNT,
   DECREASE_PRODUCT_COUNT,
+  CLEAR_COUNTER,
 } from '../constants/ProductPage';
 
 import { database } from '../../firebaseApp.js';
@@ -43,3 +44,7 @@ export const getProductData = ({ category, subcategory, id }) =>
       dispatch( gettingProductDataFailure(error) );
     }
   };
+
+export const clearCounter = () => ({
+  type: CLEAR_COUNTER,
+});

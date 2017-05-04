@@ -3,6 +3,7 @@ import {
   PRODUCTPAGE_RECEIVE_DATA_ERROR,
   INCREASE_PRODUCT_COUNT,
   DECREASE_PRODUCT_COUNT,
+  CLEAR_COUNTER,
 } from '../constants/ProductPage';
 
 const initialState = {
@@ -42,6 +43,11 @@ const productPage = (state = initialState, { type, payload }) => {
       return {
         ...state,
         count: state.count === 1 ? 1 : state.count - 1
+      };
+    case CLEAR_COUNTER:
+      return {
+        ...state,
+        count: 1,
       }
     default:
       return state;

@@ -11,6 +11,16 @@ import { matchString } from '../utils/searchHelpers';
 import { transformToNotNestedArray } from '../utils/helpers';
 
 export class SearchResultsPageContainer extends Component {
+  static propTypes = {
+    products: PropTypes.shape({
+      hasReceivedData: PropTypes.bool.isRequired,
+      errorMessage: PropTypes.string.isRequired,
+      data: PropTypes.object.isRequired,
+    }).isRequired,
+    params: PropTypes.shape({
+      query: PropTypes.string.isRequired,
+    }),
+  }
 
   componentDidMount = () => {
     this.props.listenToProducts();

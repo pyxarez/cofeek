@@ -7,7 +7,8 @@ import { bindActionCreators } from 'redux';
 import {
   getProductData,
   increaseProductCount,
-  decreaseProductCount
+  decreaseProductCount,
+  clearCounter,
 } from '../store/actions/ProductPageActions';
 import { addProductToCart } from '../store/actions/CartActions';
 
@@ -46,6 +47,7 @@ export class ProductPageContainer extends Component {
       subcategory,
       count,
     } = this.props.productPage;
+    const { clearCounter } = this.props;
 
     this.props.addProductToCart({
       id,
@@ -55,7 +57,7 @@ export class ProductPageContainer extends Component {
       count,
       category,
       subcategory,
-    });
+    }).then(() => clearCounter());
   }
 
   componentDidMount = () => {
@@ -121,6 +123,7 @@ const mapDispatchToProps = (dispatch) => ({
     addProductToCart,
     increaseProductCount,
     decreaseProductCount,
+    clearCounter,
   }, dispatch)
 });
 

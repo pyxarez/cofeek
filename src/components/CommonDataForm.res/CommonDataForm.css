@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  transition: all 0.3s ease-out;
+}
+
+.visible {
+  composes: container;
+  transform: scaleY(1);
+}
+
+.hidden {
+  composes: container;
+  height: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.form-label {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 25px;
+}
+
+.valid-text-field {
+  composes: decorated-input from '../../assets/general.css';
+}
+
+.invalid-text-field {
+  composes: decorated-input from '../../assets/general.css';
+  border: 1px solid color(red a(60%));
+}
+
+.valid-number-field {
+  composes: decorated-input from '../../assets/general.css';
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.invalid-number-field {
+  composes: decorated-input from '../../assets/general.css';
+  border: 1px solid color(red a(60%));
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.about-number {
+  margin-top: 6px;
+}

@@ -13,7 +13,7 @@ import styles from './Footer.res/Footer.css';
 const Footer = () => {
   return (
     <footer className={styles.common}>
-      <span className={styles.scrollTop}/>
+      <span className={styles.scrollTop} onClick={ () => { window.scrollTo(0, 0); } }/>
       <div className={styles.wrapper}>
         <img className={styles.image} src={helpSVG} alt="help"/>
         Нужна помощь? Позвоните нам!

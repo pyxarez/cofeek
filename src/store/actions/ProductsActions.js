@@ -1,6 +1,7 @@
 import {
   PRODUCTS_RECEIVE_DATA,
-  PRODUCTS_RECEIVE_DATA_ERROR
+  PRODUCTS_RECEIVE_DATA_ERROR,
+  CLEAR_PRODUCTS,
 } from '../constants/Products';
 
 import { database } from '../../firebaseApp.js';
@@ -41,3 +42,7 @@ export const listenToProducts = requestedItem => {
     }
   };
 };
+
+export const clearProducts = () => ({
+  type: CLEAR_PRODUCTS,
+});

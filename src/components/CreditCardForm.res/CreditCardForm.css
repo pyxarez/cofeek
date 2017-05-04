@@ -1,0 +1,70 @@
+.credit-card-form {
+  max-width: 300px;
+}
+
+.credit-card-label {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 20px;
+  
+
+  &:nth-of-type(3), &:nth-of-type(4) {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+.credit-card-owner-valid {
+  composes: decorated-input from '../../assets/general.css';
+  margin-top: 7px;
+}
+
+.credit-card-owner-invalid {
+  composes: decorated-input from '../../assets/general.css';
+  margin-top: 7px;
+  border: 1px solid color(red a(60%));
+}
+
+.credit-card-number-valid {
+  composes: decorated-input from '../../assets/general.css';
+  margin-top: 7px;
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.credit-card-number-invalid {
+  composes: decorated-input from '../../assets/general.css';
+  margin-top: 7px;
+  border: 1px solid color(red a(60%));
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.credit-card-small-input-valid {
+  composes: decorated-input from '../../assets/general.css';
+  margin: 7px 0 0 auto;
+  max-width: 150px;
+  height: 40px;
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.credit-card-small-input-invalid {
+  composes: decorated-input from '../../assets/general.css';
+  margin: 7px 0 0 auto;
+  max-width: 150px;
+  height: 40px;
+  border: 1px solid color(red a(60%));
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+}
+

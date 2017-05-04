@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 import CartProductContainer from '../containers/CartProduct';
 
@@ -13,35 +14,36 @@ const Cart = ({ cart, toggleCartState }) => {
   const products = toArray(cart.products);
 
   return (
-    <section className={cart.state ? background.fillBgVisible : background.fillBgHidden}>
-      <div className={cart.state ? styles.panelVisible : styles.panelHidden}>
-        <header className={styles.header}>
-          <div className={styles.continueShopping} onClick={toggleCartState} >
-            <img className={styles.imageClose} src={arrowLeftSVG} alt="close"/>
-            <span className={styles.boldSpan}>Продолжить покупки</span>
+    <section className={ cart.state ? background.fillBgVisible : background.fillBgHidden }>
+      <div className={ cart.state ? styles.panelVisible : styles.panelHidden }>
+        <header className={ styles.header }>
+          <div className={ styles.continueShopping } onClick={ toggleCartState } >
+            <img className={ styles.imageClose } src={ arrowLeftSVG } alt="close"/>
+            <span className={ styles.boldSpan }>Продолжить покупки</span>
           </div>
         </header>
 
-        <section className={styles.productList}>
-          {products.length > 0
+        <section className={ styles.productList }>
+          { products.length > 0
             && products.map(product =>
               <CartProductContainer 
-                key={product.id}
-                id={product.id}
-                name={product.name} 
-                count={product.count} 
-                cost={product.cost} 
-                url={product.url}/>)}
+                key={ product.id }
+                id={ product.id }
+                name={ product.name }
+                count={ product.count }
+                cost={ product.cost }
+                url={ product.url }/>) }
         </section>
         
-        <footer className={styles.costWrapper}>
-          <span className={styles.costLabel}>
+        <footer className={ styles.costWrapper }>
+          <span className={ styles.costLabel }>
             Сумма покупок:
           </span>
-          <span className={styles.cost}>
-            {cart.totalCost}  руб.
+          <span className={ styles.cost }>
+            { cart.totalCost }  руб.
           </span>
-          <button className={styles.checkout}>Заказать товары</button>
+          <Link className={ styles.checkout } to='/checkout' onClick={ toggleCartState }>Заказать товары</Link>
+          {/*<button className={ styles.checkout }>Заказать товары</button> */}
         </footer>
       </div>
     </section>

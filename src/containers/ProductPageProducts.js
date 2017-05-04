@@ -39,7 +39,8 @@ export class ProductPageProductsContainer extends Component {
     const { products, params } = this.props;
     const newProducts = { ...products };
 
-    if ( Object.keys(newProducts.data).length === 0 ) {
+    if ( Object.keys(newProducts.data).length === 0
+         || ~Object.keys(newProducts.data).indexOf('coffee') ) {
       newProducts.data = [];
     } else {
       newProducts.data = toArray(newProducts.data);
@@ -55,7 +56,9 @@ const mapStateToProps = ({ products }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators({ listenToProducts }, dispatch),
+  ...bindActionCreators({
+    listenToProducts,
+  }, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductPageProductsContainer);

@@ -18,6 +18,10 @@
   text-align: center;
   margin-bottom: 30px;
   font-weight: bold;
+
+  &:hover {
+    color: color(black a(80%));
+  }
 }
 
 .shop-links {

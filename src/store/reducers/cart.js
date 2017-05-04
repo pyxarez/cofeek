@@ -7,6 +7,7 @@ import {
   DELETE_PRODUCT_FROM_CART,
   INCREASE_ITEM_COUNT,
   DECREASE_ITEM_COUNT,
+  CLEAR_CART,
 } from '../constants/Cart';
 
 import {
@@ -88,6 +89,11 @@ const cart = ( state = initialState, { type, payload } ) => {
       return {
         ...state,
         addedPanelState: !state.addedPanelState,
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        products: {}
       };
     default:
       return state;

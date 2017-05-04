@@ -1,0 +1,73 @@
+.container {
+  padding: 57px 0 100px 20%;
+}
+
+.checkout-title {
+  margin: 50px 0 0 0;
+}
+
+.form-title {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+  margin: 20px 0;
+  max-width: 60%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.delivery-type {
+  margin-top: 15px;
+}
+
+.delivery-wrapper {
+  display: flex;
+  max-width: 60%;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.delivery-cost {
+  margin-left: auto;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.is-this-a-gift {
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+.gift-message-wrapper-visible {
+  transition: all 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.gift-message-wrapper-hidden {
+  transition: all 0.3s ease-out;
+  height: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.gift-message {
+  display: block;
+  margin-top: 10px;
+  max-width: 60%;
+  composes: primary-font-family from '../../assets/typography.css';
+}
+
+.card-types {
+  margin-bottom: 20px;
+}
+
+.checkout-button {
+  composes: buttons from '../../assets/general.css';
+  max-width: 300px;
+  margin-top: 40px;
+  height: 40px;
+}

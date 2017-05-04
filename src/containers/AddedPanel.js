@@ -7,12 +7,12 @@ import { toggleAddedPanelState } from '../store/actions/CartActions';
 import AddedPanel from '../components/AddedPanel';
 
 const mapStateToProps = ({ cart }) => ({
-  cart
+  addedPanelState: cart.addedPanelState,
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    toggleAddedPanelState ,
+    toggleAddedPanelState,
   }, dispatch)
 });
 

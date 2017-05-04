@@ -6,6 +6,7 @@ import cart from './cart';
 import products from './products';
 import shop from './shop';
 import productPage from './productPage';
+import checkoutPage from './checkoutPage';
 
 const rootReducer = combineReducers({
   productPage,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   cart,
   menu,
   shop,
+  checkoutPage,
   routing: routerReducer
 });
 

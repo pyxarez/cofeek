@@ -13,6 +13,7 @@ import Home from './components/Home';
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
 import SearchResultsPageContainer from './containers/SearchResultsPage';
+import CheckoutPageContainer from './containers/CheckoutPage';
 
 import { auth } from './firebaseApp';
 import { listenToCart } from './store/actions/CartActions';
@@ -41,7 +42,7 @@ auth.onAuthStateChanged(user => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <Router onUpdate={ () => window.scrollTo(0, 0) } history={history}>
       <Redirect from='/' to='home'/>
 
       <Route path='/' component={ App }>
@@ -54,6 +55,8 @@ ReactDOM.render(
         <Route path='product/:category/:subcategory/:id' component={ ProductPageContainer }/>
 
         <Route path='search/:query' component={ SearchResultsPageContainer }/>
+
+        <Route path='checkout' component={ CheckoutPageContainer }/>
       </Route>
     </Router>
   </Provider>,
