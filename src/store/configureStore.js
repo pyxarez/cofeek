@@ -15,6 +15,6 @@ export default initialState => {
   return createStore(
     rootReducer,
     initialState,
-    applyMiddleware(thunk, logger, middleware)
+    applyMiddleware(thunk, middleware, logger)
   );
 }

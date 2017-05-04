@@ -12,6 +12,7 @@ import Home from './components/Home';
 
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
+import SearchResultsPageContainer from './containers/SearchResultsPage';
 
 import { auth } from './firebaseApp';
 import { listenToCart } from './store/actions/CartActions';
@@ -43,14 +44,16 @@ ReactDOM.render(
     <Router history={history}>
       <Redirect from='/' to='home'/>
 
-      <Route path='/' component={App}>
-        <Route path='home' component={Home}/>
+      <Route path='/' component={ App }>
+        <Route path='home' component={ Home }/>
 
-        <Route path='shop' component={ShopContainer}/>
-        <Route path='shop/:category' component={ShopContainer}/>
-        <Route path='shop/:category/:subcategory' component={ShopContainer}/>
+        <Route path='shop' component={ ShopContainer }/>
+        <Route path='shop/:category' component={ ShopContainer }/>
+        <Route path='shop/:category/:subcategory' component={ ShopContainer }/>
 
-        <Route path='product/:category/:subcategory/:id' component={ProductPageContainer}/>
+        <Route path='product/:category/:subcategory/:id' component={ ProductPageContainer }/>
+
+        <Route path='search/:query' component={ SearchResultsPageContainer }/>
       </Route>
     </Router>
   </Provider>,

@@ -1,0 +1,10 @@
+.container {
+  padding: 57px 0 100px 0;
+}
+
+.resultTitle {
+  margin-top: 60px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}

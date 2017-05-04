@@ -1,3 +1,5 @@
+// Здесь хранятся хелперы для работы с объектами, прилетающими
+// из БД
 export const toArray = obj =>
   Object.keys(obj).map(prop => obj[prop]);
 
@@ -58,22 +60,5 @@ export const decreaseTargetCount = iterateByObjAndApplyFuncToEveryElem((accum, i
     }
   }
 });
-
-// const obj = {
-//   'vassa': {
-//     count: 2
-//   },
-//   'uasa': {
-//     count: 1
-//   }
-// };
-
-// const obj2 = {
-//   id: 'vassa'
-// }
-
-// console.log(decreaseTargetCount(obj, obj2));
-// console.log(obj, obj2);
-
 
 

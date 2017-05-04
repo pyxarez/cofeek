@@ -24,12 +24,12 @@ export class HomeProductsContainer extends Component {
 
   render() {
     const { products, count } = this.props;
-    const newProducts = {...products};
+    const newProducts = { ...products };
 
     newProducts.data = transformToNotNestedArray(newProducts.data, 3);
     if (typeof count !== 'undefined') newProducts.data.length = count;
 
-    return <Products products={newProducts}/>
+    return <Products products={ newProducts }/>
   }
 }
 
@@ -37,7 +37,7 @@ const mapStateToProps = ({ products }) => ({
   products,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({ listenToProducts }, dispatch),
 });
 
