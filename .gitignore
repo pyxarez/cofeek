@@ -9,6 +9,12 @@
 # production
 /build
 
+# firebase
+/functions
+database.rules.json
+firebase.json
+.firebaserc
+
 # misc
 .DS_Store
 .env
