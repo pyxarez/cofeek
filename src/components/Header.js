@@ -9,7 +9,6 @@ import styles from './Header.res/Header.css';
 import burgerSVG from './Header.res/burger.svg';
 import phoneSVG from './Header.res/phone.svg';
 import cartSVG from './Header.res/cart.svg';
-import logoSVG from '../assets/images/logo.svg';
 
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (

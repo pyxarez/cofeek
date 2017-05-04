@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Products from '../components/Products';
 
 import { listenToProducts } from '../store/actions/ProductsActions';
-import { toArray, transformToNotNestedArray } from '../utils/helpers';
+import { toArray } from '../utils/helpers';
 
 export class ProductPageProductsContainer extends Component {
   static propTypes = {

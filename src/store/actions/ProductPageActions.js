@@ -6,7 +6,6 @@ import {
 } from '../constants/ProductPage';
 
 import { database } from '../../firebaseApp.js';
-import { push } from 'react-router-redux';
 
 const gettingProductDataSuccess = value => ({
   type: PRODUCTPAGE_RECEIVE_DATA,

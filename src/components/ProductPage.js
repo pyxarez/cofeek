@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { increaseProductCount, decreaseProductCount } from '../store/actions/ProductPageActions';
-
 import AddedPanelContainer from '../containers/AddedPanel';
 import ProductPageProductsContainer from '../containers/ProductPageProducts';
 
