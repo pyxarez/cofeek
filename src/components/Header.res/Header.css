@@ -35,9 +35,14 @@
 .logo {
   position: relative;
   height: 40px;
+  width: 137px;
   top: -3px;
   margin-right: 40px;
   cursor: pointer;
+  background-image: url('../../assets/images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
 }
 
 .phone-number {

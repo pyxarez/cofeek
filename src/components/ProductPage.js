@@ -24,8 +24,6 @@ export const ProductPage = ({
     count,
     description,
     url,
-    category,
-    subcategory
   } = productData;
 
   return (

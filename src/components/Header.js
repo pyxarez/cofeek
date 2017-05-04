@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 import SearchBox from './SearchBox';
 
@@ -12,15 +13,15 @@ import logoSVG from '../assets/images/logo.svg';
 
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (
-    <header className={styles.common}>
-      <img src={burgerSVG} onClick={toggleMenuState} className={menu ? styles.hidden : styles.visible} alt="menu"/>
-      <img src={logoSVG} className={styles.logo} alt="logo"/>
+    <header className={ styles.common }>
+      <img src={ burgerSVG } onClick={toggleMenuState} className={ menu ?  styles.hidden : styles.visible } alt="menu"/>
+      <Link className={ styles.logo } to='/home'/>
       <SearchBox/>
-      <span className={styles.phoneNumber}>
-        <img src={phoneSVG} className={styles.phone} alt="phone"/>
-        <a className={styles.phoneLink} href='tel:8-800-555-35-35'> 8 800 555-35-35</a>
+      <span className={ styles.phoneNumber }>
+        <img src={ phoneSVG } className={ styles.phone } alt="phone"/>
+        <a className={ styles.phoneLink } href='tel:8-800-555-35-35'> 8 800 555-35-35</a>
       </span>
-      <img src={cartSVG} className={styles.cart} onClick={toggleCartState} alt="cart"/>
+      <img src={ cartSVG } className={ styles.cart } onClick={ toggleCartState } alt="cart"/>
     </header>
   );
 };

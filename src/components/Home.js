@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 // import PropTypes from 'prop-types';
 
 import Banner from './Banner';
+import AddedPanel from '../containers/AddedPanel';
 
 import HomeProductsContainer from '../containers/HomeProducts';
 
@@ -11,6 +12,7 @@ import styles from './Home.res/Home.css';
 const Home = () => {
   return (
     <main className={styles.common}>
+      <AddedPanel/>
       <Banner />
       <h1 className={styles.title}>Товары в нашем магазине</h1>
       <HomeProductsContainer count={6}/>
