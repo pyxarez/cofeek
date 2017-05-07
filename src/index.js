@@ -9,6 +9,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from './components/App';
 import Home from './components/Home';
+import AboutPage from './components/AboutPage';
 
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
@@ -57,6 +58,8 @@ ReactDOM.render(
         <Route path='search/:query' component={ SearchResultsPageContainer }/>
 
         <Route path='checkout' component={ CheckoutPageContainer }/>
+
+        <Route path='about' component={ AboutPage }/>
       </Route>
     </Router>
   </Provider>,

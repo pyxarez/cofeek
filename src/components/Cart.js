@@ -43,7 +43,6 @@ const Cart = ({ cart, toggleCartState }) => {
             { cart.totalCost }  руб.
           </span>
           <Link className={ styles.checkout } to='/checkout' onClick={ toggleCartState }>Заказать товары</Link>
-          {/*<button className={ styles.checkout }>Заказать товары</button> */}
         </footer>
       </div>
     </section>

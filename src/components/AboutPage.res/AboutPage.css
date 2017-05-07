@@ -1,0 +1,72 @@
+.container {
+  padding: 57px 0 100px 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 100px 0;
+  padding: 0 9%;
+}
+
+.parallax {
+  composes: secondary-font-family from '../../assets/typography.css';
+
+  height: 600px;
+  position: relative;
+
+  padding-top: 250px;
+  text-align: center;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top-parallax {
+  composes: parallax;
+  background-image: url('./main-image.png');
+
+  &:after {
+    content: 'О нас';
+    display: inline-block;
+    padding: 15px 20px;
+
+    font-weight: bold;
+    font-size: 300%;
+
+    background: color(black a(60%));
+    color: color(white a(90%));
+
+    border-radius: 5px;
+  }
+}
+
+.bottom-parallax {
+  composes: parallax;
+  background-image: url('./body-image.png');
+}
+
+.about-image {
+  max-height: 200px;
+
+}
+
+.image-wrapper {
+  flex: 1;
+
+  &:first-child {
+    margin-right: 30px; 
+  }
+}
+
+.about-info {
+  composes: primary-font-family from '../../assets/typography.css';
+  flex: 1;
+  line-height: 170%;
+
+  &:first-child {
+    margin-right: 30px; 
+  }
+}
