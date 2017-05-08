@@ -27,8 +27,13 @@
   }
 }
 
+.image-wrapper {
+  min-height: 300px;
+}
+
 .product-image {
   max-width: 470px;
+  max-height: 470px;
 }
 
 .product-cost {

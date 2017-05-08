@@ -1,7 +1,5 @@
 import React from 'react';
 
-import mainImage from './AboutPage.res/main-image.png';
-import bodyImage from './AboutPage.res/body-image.png';
 import firstLittlePicture from './AboutPage.res/little-first-picture.png';
 import secondLittlePicture from './AboutPage.res/little-second-picture.png';
 

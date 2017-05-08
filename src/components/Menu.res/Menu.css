@@ -93,4 +93,8 @@
   &:last-of-type {
     margin-bottom: auto;
   }
+
+  &:hover {
+    color: color(black a(80%));
+  }
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import helpSVG from './Footer.res/info.svg'; 
 import mailsSVG from './Footer.res/mails.svg'; 
 import emailSVG from './Footer.res/Email.svg'; 
-import logoSVG from '../assets/images/logo.svg';
+import logoSVG from '../assets/images/logo1.png';
 
 
 import styles from './Footer.res/Footer.css';

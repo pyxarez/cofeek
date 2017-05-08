@@ -44,7 +44,7 @@ export const ProductPage = ({
           </div>
           <div className={ styles.productButtons }>
             <button className={ styles.addToCartButton } onClick={ addToCart }>Добавить в корзину</button>
-            <button className={ styles.addToWishListButton }>В список желаемого</button>
+            {/* <button className={ styles.addToWishListButton }>В список желаемого</button> */}
           </div>
         </div>
       </div>

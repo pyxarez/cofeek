@@ -1,5 +1,6 @@
 .container {
   padding: 57px 0 100px 0;
+  min-height: 100vh;
 }
 
 .resultTitle {

@@ -45,6 +45,7 @@ export class ProductPageProductsContainer extends Component {
     } else {
       newProducts.data = toArray(newProducts.data);
       newProducts.data = newProducts.data.filter(item => item.id !== params.id)
+      newProducts.data.length = 3;
     }
 
     return <Products products={ newProducts } params={ params }/>

@@ -79,9 +79,15 @@
 .add-to-cart-button {
   composes: buttons from '../../assets/general.css';
   composes: big-button;
+
   margin-right: 10px;
-  color: white;
-  background: deepskyblue;
+    color: black;
+    background: white;
+
+  &:hover {
+    color: white;
+    background: color(black a(80%));
+  }
 }
 
 .add-to-wish-list-button {
