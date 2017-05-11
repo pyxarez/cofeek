@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import AddedPanelContainer from '../containers/AddedPanel';
 import ProductPageProductsContainer from '../containers/ProductPageProducts';
 
-import increase from './ProductPage.res/increase.svg';
-import decrease from './ProductPage.res/decrease.svg';
+import increase from '../assets/images/add.min.svg';
+import decrease from '../assets/images/delete.min.svg';
 
 import styles from './ProductPage.res/ProductPage.css';
 
@@ -32,6 +32,7 @@ export const ProductPage = ({
         <div className={ styles.imageHolder }>
           <img className={ styles.productImage } src={ url } alt="product"/>
         </div>
+
         <div className={ styles.content }>
           <span className={ styles.productCost }>{ cost }.00руб.</span>
           <p className={ styles.productDescription }>{ description }</p>

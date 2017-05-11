@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
-import loupeSVG from './SearchBox.res/loupe.svg';
+import loupeSVG from './SearchBox.res/loupe.min.svg';
 
 import styles from './SearchBox.res/SearchBox.css';
 
@@ -31,7 +31,7 @@ export class SearchBox extends Component {
           onKeyPress={ this.handleKeyPress }
           placeholder="Введите запрос..."
           type="text"/>
-        <img className={ styles.loupe } src={ loupeSVG } alt="loupe"/>
+        <img onClick={ this.handleClick } className={ styles.loupe } src={ loupeSVG } alt="loupe"/>
       </div>
     );
   }

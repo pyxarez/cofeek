@@ -5,7 +5,7 @@ $border-color: color(black a(70%));
   display: flex;
   flex-wrap: wrap;
   background: $footer-color;
-  padding: 50px 0 20px 0;
+  padding: 50px 20px 20px 20px;
   position: relative;
   border-top: 1px solid $border-color;
 }
@@ -26,7 +26,7 @@ $border-color: color(black a(70%));
   border: 1px solid $border-color;
 
   background-color: $footer-color;
-  background-image: url('./arrowUpBlack.svg');
+  background-image: url('./arrowUpBlack.min.svg');
   background-position: 50% 25%;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -94,8 +94,32 @@ $border-color: color(black a(70%));
   cursor: pointer;
 
   background-color: white;
-  background-image: url('./mails.svg');
+  background-image: url('./mails.min.svg');
   background-position: 50% 50%;
   background-size: 22px;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 780px) {
+  .wrapper {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .common {
+    flex-direction: column;
+    padding: 40px 10px 0 10px;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 780px) {
+  .wrapper {
+    min-width: 290px;
+  }
 }

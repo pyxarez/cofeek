@@ -19,9 +19,31 @@
   font-size: 101%;
   width: 140px;
   height: 40px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
 }
 
 .sort {
   width: 140px;
   text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    flex-flow: column;
+  }
+
+  .title {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .categories-opener {
+    order: 2;
+  }
 }

@@ -48,19 +48,19 @@
 }
 
 .twitter {
-  background-image: url('./twitter.svg');
+  background-image: url('./twitter.min.svg');
 }
 
 .instagram {
-  background-image: url('./instagram.svg');
+  background-image: url('./instagram.min.svg');
 }
 
 .vk {
-  background-image: url('./vk.svg');
+  background-image: url('./vk.min.svg');
 }
 
 .facebook {
-  background-image: url('./facebook.svg');
+  background-image: url('./facebook.min.svg');
 }
 
 .social {
@@ -96,5 +96,11 @@
 
   &:hover {
     color: color(black a(80%));
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .big-link {
+    font-size: 350%;
   }
 }

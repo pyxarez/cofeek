@@ -6,7 +6,8 @@ import CartProductContainer from '../containers/CartProduct';
 
 import { toArray } from '../utils/helpers';
 
-import arrowLeftSVG from '../assets/images/goBackArrow.svg';
+import arrowLeftSVG from '../assets/images/goBackArrow.min.svg';
+
 import styles from './Cart.res/Cart.css';
 import background from '../assets/general.css';
 

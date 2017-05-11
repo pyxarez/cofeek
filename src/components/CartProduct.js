@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import addSVG from './CartProduct.res/add.svg';
-import deleteSVG from './CartProduct.res/delete.svg';
-import closeSVG from '../assets/images/close.svg';
+import addSVG from '../assets/images/add.min.svg';
+import deleteSVG from '../assets/images/delete.min.svg';
+import closeSVG from '../assets/images/close.min.svg';
 
 import styles from './CartProduct.res/CartProduct.css';
 

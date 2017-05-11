@@ -1,3 +1,7 @@
+:root {
+  --panels-width: 375px;
+}
+
 *, ::after, ::before {
   margin: 0;
   padding: 0;
@@ -12,4 +16,11 @@
 
 html, body {
   height: 100%;
+}
+
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --panels-width: 100vw;
+  }
 }

@@ -6,9 +6,9 @@ import SearchBox from './SearchBox';
 
 import styles from './Header.res/Header.css';
 
-import burgerSVG from './Header.res/burger.svg';
-import phoneSVG from './Header.res/phone.svg';
-import cartSVG from './Header.res/cart.svg';
+import burgerSVG from './Header.res/burger.min.svg';
+import phoneSVG from './Header.res/phone.min.svg';
+import cartSVG from './Header.res/cart.min.svg';
 
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (
@@ -18,7 +18,7 @@ const Header = ({ menu, toggleMenuState, toggleCartState }) => {
       <SearchBox/>
       <span className={ styles.phoneNumber }>
         <img src={ phoneSVG } className={ styles.phone } alt="phone"/>
-        <a className={ styles.phoneLink } href='tel:8-800-555-35-35'> 8 800 555-35-35</a>
+        <a className={ styles.phoneLink } href='tel:88005553535'> 8 800 555-35-35</a>
       </span>
       <img src={ cartSVG } className={ styles.cart } onClick={ toggleCartState } alt="cart"/>
     </header>

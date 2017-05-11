@@ -65,3 +65,40 @@
   height: 30px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 480px) {
+  .common {
+    padding: 0 10px;
+  }
+
+  .cart {
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 597px) {
+  .logo {
+    width: 40px;
+    margin-right: 5px;
+    background-image: url('./mobile-logo.svg');
+  }
+
+  .phone-number {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .logo {
+    margin-right: 10px;
+  }
+
+  .cart {
+    margin-left: 10px;
+  }
+
+  .phone-number {
+    margin-left: 10px;
+  }
+}

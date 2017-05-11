@@ -1,9 +1,8 @@
-$panel-width: 375px;
-
 .panel {
   composes: slide-panel from '../../assets/general.css';
   transition: left 0.3s ease-out;
-  width: $panel-width;
+  width: var(--panels-width);
+  overflow-y: auto;
 }
 
 .panel-visible {
@@ -13,7 +12,7 @@ $panel-width: 375px;
 
 .panel-hidden {
   composes: panel;
-  left: -$panel-width;
+  left: calc(var(--panels-width) * -1);
 }
 
 .panel-title {

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router';
 
-import closeSVG from '../assets/images/close.svg';
-import loginSVG from './Menu.res/login.svg';
+import closeSVG from '../assets/images/close.min.svg';
+import loginSVG from './Menu.res/login.min.svg';
 
 import styles from './Menu.res/Menu.css';
 

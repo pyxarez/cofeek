@@ -1,7 +1,7 @@
 import React from 'react';
 
-import firstLittlePicture from './AboutPage.res/little-first-picture.png';
-import secondLittlePicture from './AboutPage.res/little-second-picture.png';
+import firstLittlePicture from './AboutPage.res/little-first-picture.webp';
+import secondLittlePicture from './AboutPage.res/little-second-picture.webp';
 
 import styles from './AboutPage.res/AboutPage.css';
 

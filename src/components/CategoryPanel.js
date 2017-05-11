@@ -5,7 +5,7 @@ import Category from './Category';
 
 import { coffee, tea, gear } from '../utils/categoryData';
 
-import closePanel from '../assets/images/goBackArrow.svg'; 
+import closePanel from '../assets/images/goBackArrow.min.svg'; 
 import styles from './CategoryPanel.res/CategoryPanel.css';
 import bg from '../assets/general.css';
 

@@ -19,20 +19,18 @@
 
 .category-list {
   text-decoration: none;
-  transition: all 0.3s ease-out;
+  transition: max-height .8s ease-out;
   overflow: hidden;
 }
 
 .category-list-expanded {
   composes: category-list;
-  transform: scaleY(1);
+  max-height: 300px;
 }
 
 .category-list-closed {
   composes: category-list;
-  height: 0;
-  transform-origin: top;
-  transform: scaleY(0);
+  max-height: 0;
 }
 
 .category-wrapper {

@@ -2,9 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-import helpSVG from './Footer.res/info.svg'; 
-import mailsSVG from './Footer.res/mails.svg'; 
-import emailSVG from './Footer.res/Email.svg'; 
+import helpSVG from './Footer.res/info.min.svg'; 
+import mailsSVG from './Footer.res/mails.min.svg'; 
+import emailSVG from './Footer.res/Email.min.svg'; 
 import logoSVG from '../assets/images/logo1.png';
 
 

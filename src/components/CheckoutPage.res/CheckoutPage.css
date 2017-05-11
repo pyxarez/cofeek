@@ -68,6 +68,33 @@
 .checkout-button {
   composes: buttons from '../../assets/general.css';
   max-width: 300px;
-  margin-top: 40px;
+  margin-top: 50px;
   height: 40px;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 57px 10px 100px 10px;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  .form-title {
+    max-width: 100%;
+  }
+
+  .delivery-wrapper {
+    max-width: 100%;
+  }
+
+  .checkout-button {
+    max-width: 100%;
+  }
 }

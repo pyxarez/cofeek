@@ -1,3 +1,7 @@
 .large-page-padding {
   padding: 0 20px;
 }
+
+.small-page-padding {
+  padding: 0 10px;
+}

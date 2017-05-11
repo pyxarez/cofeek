@@ -26,7 +26,7 @@
 
 .top-parallax {
   composes: parallax;
-  background-image: url('./main-image.png');
+  background-image: url('./main-image.webp');
 
   &:after {
     content: 'О нас';
@@ -45,12 +45,12 @@
 
 .bottom-parallax {
   composes: parallax;
-  background-image: url('./body-image.png');
+  background-image: url('./body-image.webp');
 }
 
 .about-image {
-  max-height: 200px;
-
+  max-width: 100%;
+  height: auto;
 }
 
 .image-wrapper {
@@ -68,5 +68,28 @@
 
   &:first-child {
     margin-right: 30px; 
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    flex-flow: column nowrap;
+  }
+
+  .about-image {
+    max-width: 100%;
+    
+    &:first-child {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-top: 20px;
+    }
   }
 }

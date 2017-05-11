@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
-import close from './Category.res/close.svg';
-import open from './Category.res/open.svg';
+import close from './Category.res/close.min.svg';
+import open from './Category.res/open.min.svg';
 import styles from './Category.res/Category.css';
 
 export class Category extends Component {

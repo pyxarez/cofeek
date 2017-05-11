@@ -1,6 +1,7 @@
 .common {
   flex: 1;
   text-align: center;
+  align-items: center;
   background: color(grey a(10%));
   margin: 0 20px 20px 20px;
   padding: 20px;
@@ -28,12 +29,16 @@
 }
 
 .image-wrapper {
-  min-height: 300px;
+  height: 470px;
+  display: flex;
+  align-items: center;
 }
 
 .product-image {
   max-width: 470px;
+  height: auto;
   max-height: 470px;
+  margin: 0 auto;
 }
 
 .product-cost {
@@ -49,4 +54,17 @@
   }
 }
 
+@media only screen and (max-width: 538px) {
+  .common {
+    min-width: 100%;
+    margin: 0 0 20px 0;
+  }
 
+  .image-wrapper {
+    height: auto;
+  }
+
+  .product-image {
+    width: 100%;
+  }
+}
