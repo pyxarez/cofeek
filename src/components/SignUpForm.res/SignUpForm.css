@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+}
+
+.password-hint {
+  font-size: 14px;
+  margin-top: 9px;
+}
+
+.create-acc-button {
+  composes: buttons from '../../assets/general.css';
+  margin-top: 40px;
+  width: 190px;
+  height: 40px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 40px;
+}

@@ -25,7 +25,8 @@ var postCSSConfig = [
   // /* PostCSS plugin for making calculations with math.js  */
   // require('postcss-math'),
   /* transform W3C CSS color function to more compatible CSS. */
-  require('postcss-color-function')
+  require('postcss-color-function'),
+  require('postcss-media-minmax')
 ]
 
 // Export the PostCSS Config for usage in webpack

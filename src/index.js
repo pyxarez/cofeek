@@ -10,6 +10,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import App from './components/App';
 import Home from './components/Home';
 import AboutPage from './components/AboutPage';
+import LoginSignUpPage from './components/LoginSignUpPage';
 
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
@@ -30,14 +31,14 @@ auth.onAuthStateChanged(user => {
     console.log('This is a user information');
     console.log(user);
     console.groupEnd('onAuthState');
-    store.dispatch(listenToCart(user));
+    store.dispatch( listenToCart(user) );
   } else {
     auth.signInAnonymously()
-    .then(info => console.log(`Я родился: ${info}`))
-    .catch(error => {
-      console.log('Error with anon signIn');
-      console.log(error);
-    });
+      .then(info => console.log(`Я родился: ${info}`))
+      .catch(error => {
+        console.log('Error with anon signIn');
+        console.log(error);
+      });
   }
 });
 
@@ -60,6 +61,8 @@ ReactDOM.render(
         <Route path='checkout' component={ CheckoutPageContainer }/>
 
         <Route path='about' component={ AboutPage }/>
+
+        <Route path='login' component={ LoginSignUpPage }/>
       </Route>
     </Router>
   </Provider>,

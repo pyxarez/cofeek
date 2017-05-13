@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid black;
+}
+
+.login-button {
+  composes: buttons from '../../assets/general.css';
+  margin-top: 40px;
+  width: 79px;
+  height: 40px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 20px;
+}
+
+@media only screen and (width >= 720px) {
+  .container {
+    border-bottom: none;
+  }
+}

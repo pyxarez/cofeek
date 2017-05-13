@@ -1,22 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { auth } from '../firebaseApp';
+
 import { Link } from 'react-router';
 
 import closeSVG from '../assets/images/close.min.svg';
 import loginSVG from './Menu.res/login.min.svg';
+import profileSVG from './Menu.res/profile.min.svg';
 
 import styles from './Menu.res/Menu.css';
 
 const Menu = ({ menu, toggleMenuState }) => {
+  const isAnonymous = auth.currentUser
+    ? auth.currentUser.isAnonymous
+    : true;
+
   return (
     <section className={menu ? styles.visible : styles.hidden}>
       <img className={styles.close} onClick={toggleMenuState} src={closeSVG} alt="close"/>
 
-      <Link to='login' className={styles.loginTitle}>
-        <img className={styles.login} src={loginSVG} alt="login"/>
-        Войти
-      </Link>
+      { isAnonymous
+          ? <Link to='/login' onClick={ toggleMenuState } className={ styles.topTitle }>
+              <img className={ styles.topImage } src={ loginSVG } alt="login"/>
+              Войти
+            </Link>
+          : <Link to='/profile' onClick={ toggleMenuState } className={ styles.topTitle }>
+              <img className={ styles.topImage } src={ profileSVG } alt="profile"/>
+              Профиль
+            </Link> }
 
       <Link to='/home' onClick={toggleMenuState} className={styles.bigLink}>Домой</Link>
       <Link to='/shop/coffee/all' onClick={toggleMenuState} className={styles.bigLink}>Магазин</Link>

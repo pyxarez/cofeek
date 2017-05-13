@@ -7,6 +7,7 @@ import products from './products';
 import shop from './shop';
 import productPage from './productPage';
 import checkoutPage from './checkoutPage';
+import loginSignUpPage from './loginSignUpPage';
 
 const rootReducer = combineReducers({
   productPage,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   menu,
   shop,
   checkoutPage,
+  loginSignUpPage,
   routing: routerReducer
 });
 

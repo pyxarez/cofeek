@@ -1,0 +1,14 @@
+.input-label {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 25px;
+}
+
+.valid-input {
+  composes: decorated-input from '../../assets/general.css';
+}
+
+.invalid-input {
+  composes: decorated-input from '../../assets/general.css';
+  border: 1px solid color(red a(60%));
+}

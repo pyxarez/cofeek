@@ -17,7 +17,7 @@
 
 .hidden {
   composes: common;
-  top: -100vh;
+  top: -100%;
 }
 
 .close {
@@ -68,7 +68,7 @@
 }
 
 /* login  */
-.login-title {
+.top-title {
   composes: links from '../../assets/general.css';
   font-weight: bold;
   font-size: 150%;
@@ -77,7 +77,7 @@
   margin: 10px 0 auto 0;
 }
 
-.login {
+.top-image {
   width: 35px;
   height: 35px;
   margin-right: 10px;

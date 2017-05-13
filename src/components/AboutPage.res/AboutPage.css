@@ -71,12 +71,7 @@
   }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .wrapper {
-  }
-}
-
-@media only screen and (max-width: 480px) {
+@media only screen and (width <= 480px) {
   .wrapper {
     flex-flow: column nowrap;
   }

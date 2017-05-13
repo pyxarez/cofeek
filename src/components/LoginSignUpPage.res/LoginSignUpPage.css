@@ -1,0 +1,84 @@
+$active-bg: #353535;
+$inactive-bg: white;
+$tab-heigth: 40px;
+
+.container {
+  min-height: 80vh;
+  padding: 100px 20px 100px 20px;
+}
+
+.tabs {
+  border-bottom: 1px solid black;
+}
+
+.tab {
+  height: $tab-heigth;
+  display: inline-block;
+  text-align: center;
+  line-height: $tab-heigth;
+  cursor: pointer;
+  transition: background .2s ease-out;
+}
+
+.active {
+  background: $active-bg;
+  color: white;
+}
+
+.inactive {
+  background: $inactive-bg;
+  border: 1px solid black;
+  position: relative;
+  height: calc($tab-heigth + 1px);
+  bottom: -1px;
+}
+
+.login-tab {
+  composes: tab;
+  width: 100px;
+  margin: 0 10px 0 10px;
+}
+
+.sign-up-tab {
+  composes: tab;
+  width: 130px;
+}
+
+.login-tab-active {
+  composes: login-tab;
+  composes: active;
+}
+
+.login-tab-inactive {
+  composes: login-tab;
+  composes: inactive;
+}
+
+.sign-up-tab-active {
+  composes: sign-up-tab;
+  composes: active;
+}
+
+.sign-up-tab-inactive {
+  composes: sign-up-tab;
+  composes: inactive;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (width >= 720px) {
+
+  .forms-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (width >= 960px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}

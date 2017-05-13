@@ -32,7 +32,7 @@
   }
 }
 
-@media only screen and (max-width: 538px) {
+@media only screen and (width <= 538px) {
   .shop-title {
     font-size: 40px;
   }
@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (width <= 480px) {
   .shop-title {
     font-size: 30px;
   }
@@ -50,7 +50,4 @@
   .shop-link {
     font-size: 40px;
   }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
 }

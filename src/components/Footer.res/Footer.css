@@ -100,13 +100,13 @@ $border-color: color(black a(70%));
   background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (width <= 780px) {
   .wrapper {
     margin-bottom: 50px;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (width <= 480px) {
   .common {
     flex-direction: column;
     padding: 40px 10px 0 10px;
@@ -118,7 +118,7 @@ $border-color: color(black a(70%));
 }
 
 
-@media only screen and (min-width: 481px) and (max-width: 780px) {
+@media only screen and (481px <= width <= 780px) {
   .wrapper {
     min-width: 290px;
   }
