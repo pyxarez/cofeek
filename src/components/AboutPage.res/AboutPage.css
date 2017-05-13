@@ -57,7 +57,7 @@
   flex: 1;
 
   &:first-child {
-    margin-right: 30px; 
+    margin-right: 30px;
   }
 }
 
@@ -67,7 +67,7 @@
   line-height: 170%;
 
   &:first-child {
-    margin-right: 30px; 
+    margin-right: 30px;
   }
 }
 
@@ -81,9 +81,14 @@
     flex-flow: column nowrap;
   }
 
+  .bottom-parallax {
+    height: 40%;
+    background-position: left;
+  }
+
   .about-image {
     max-width: 100%;
-    
+
     &:first-child {
       margin-bottom: 20px;
     }
