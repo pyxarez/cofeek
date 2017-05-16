@@ -18,7 +18,13 @@
 .loupe {
   position: absolute;
   right: 10px;
-  top: 3px;
+  top: 2px;
   height: 35px;
   cursor: pointer;
+  width: 35px;
+  border: none;
+
+  background-image: url('./loupe.min.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
 }

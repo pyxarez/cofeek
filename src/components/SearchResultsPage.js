@@ -11,7 +11,9 @@ const SearchResultsPage = ({ products }) => {
     <main className={ styles.container }>
       <AddedPanel/>
       <h1 className={ styles.resultTitle }>Результаты запроса</h1>
-      <Products products={ products }/>
+      { products.data.length === 0
+          ? <p className={ styles.nothingToSee}>По вашему запросу ничего не найдено.</p>
+          : <Products products={ products }/> }
     </main>
   );
 };

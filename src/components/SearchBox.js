@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
-import loupeSVG from './SearchBox.res/loupe.min.svg';
 
 import styles from './SearchBox.res/SearchBox.css';
 
 export class SearchBox extends Component {
-  handleClick = () => {
+  handleClick = event => {
+    event.preventDefault();
     const value = this.searchInput.value;
 
     if (!value.trim()) {
@@ -16,23 +16,20 @@ export class SearchBox extends Component {
 
     browserHistory.push(`/search/${value}`);
     this.searchInput.value = '';
-  }
-
-  handleKeyPress = (e) => {
-    if (e.key === "Enter") this.handleClick();
+    this.searchInput.blur();
   }
 
   render() {
     return (
-      <div className={ styles.common }>
+      <form className={ styles.common }>
         <input
           className={ styles.input }
           ref={ input => this.searchInput = input }
           onKeyPress={ this.handleKeyPress }
           placeholder="Введите запрос..."
           type="text"/>
-        <img onClick={ this.handleClick } className={ styles.loupe } src={ loupeSVG } alt="loupe"/>
-      </div>
+        <button onClick={ this.handleClick } className={ styles.loupe } type="submit"/>
+      </form>
     );
   }
 }

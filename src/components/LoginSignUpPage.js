@@ -41,11 +41,6 @@ export class LoginSignUpPage extends Component {
               <RestorePasswordForm/>
             </div>
           : <SignUpForm/> }
-        {/*{ loginFormState
-            ? <LoginForm />
-            : <SignUpForm/> }
-        { loginFormState 
-            && <RestorePasswordForm/> } */}
       </main>
     );
   }
