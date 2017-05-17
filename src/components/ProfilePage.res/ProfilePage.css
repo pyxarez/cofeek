@@ -1,0 +1,69 @@
+.container {
+  padding: 100px 10px 120px 10px;
+  min-height: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.user-info-wrapper {
+  font-weight: bold;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.user-icon {
+  $size: 60px;
+
+  background: color(grey a(30%));
+  margin-bottom: 10px;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  text-align: center;
+  line-height: $size;
+  font-size: 23px;
+}
+
+.exit-link {
+  text-decoration: none;
+  font-weight: normal;
+  color: color(black a(40%));
+}
+
+.list {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.category {
+  list-style: none;
+  border-bottom: 1px solid black;
+  padding: 15px 10px;
+}
+
+.category-image {
+  $size: 20px;
+
+  height: $size;
+  width: $size;
+  margin-right: 15px;
+}
+
+.payments-history {
+  composes: category;
+}
+
+.wish-list {
+  composes: category;
+}
+
+.account-settings {
+  composes: category;
+}
+
+.notifications {
+  composes: category;
+}

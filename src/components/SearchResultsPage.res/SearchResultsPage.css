@@ -3,6 +3,11 @@
   min-height: 100vh;
 }
 
+.notFoundWrapper {
+  margin-top: 70px;
+  text-align: center;
+}
+
 .resultTitle {
   margin-top: 60px;
   display: block;
@@ -11,6 +16,6 @@
 }
 
 .nothing-to-see {
-  margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }

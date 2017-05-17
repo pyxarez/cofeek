@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import notFoundImage from './SearchResultsPage.res/notFound.webp';
+
 import Products from './Products';
 import AddedPanel from '../containers/AddedPanel';
 
@@ -10,9 +12,9 @@ const SearchResultsPage = ({ products }) => {
   return (
     <main className={ styles.container }>
       <AddedPanel/>
-      <h1 className={ styles.resultTitle }>Результаты запроса</h1>
+      { products.data.length !== 0 && <h1 className={ styles.resultTitle }>Результаты запроса</h1> }
       { products.data.length === 0
-          ? <p className={ styles.nothingToSee}>По вашему запросу ничего не найдено.</p>
+          ? <div className={ styles.notFoundWrapper }><h3 className={ styles.nothingToSee}>По вашему запросу ничего не найдено.</h3><img src={ notFoundImage } alt="notFound"/></div>
           : <Products products={ products }/> }
     </main>
   );
