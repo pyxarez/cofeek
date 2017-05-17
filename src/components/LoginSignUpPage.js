@@ -36,11 +36,11 @@ export class LoginSignUpPage extends Component {
           <span onClick={ this.openSignUpForm } className={ signUpFormState ? styles.signUpTabActive : styles.signUpTabInactive }>Регистрация</span>
         </div>
         { loginFormState
-          ? <div className={ styles.formsContainer }>
-              <LoginForm />
-              <RestorePasswordForm/>
-            </div>
-          : <SignUpForm/> }
+            ? <div className={ styles.formsContainer }>
+                <LoginForm />
+                <RestorePasswordForm/>
+              </div>
+            : <SignUpForm/> }
       </main>
     );
   }

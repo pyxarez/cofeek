@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-// import PropTypes from 'prop-types';
 
 import Banner from './Banner';
 import AddedPanel from '../containers/AddedPanel';

@@ -9,7 +9,7 @@ import {
 } from '../constants/LoginSignUpPage';
 
 import * as firebase from 'firebase';
-import { auth } from '../../firebaseApp';
+import { auth, database } from '../../firebaseApp';
 
 const creatingAccountSuccess = user => ({
   type: CREATING_ACCOUNT_SUCCESS,
@@ -65,6 +65,14 @@ export const createAccount = (name, email, password) =>
       } else {
         user = await auth.createUserWithEmailAndPassword(email, password);
       }
+
+      const userRef = database.ref(`users/${user.uid}/profile`);
+      const updates = {
+        userName: name,
+        notifications: true,
+      };
+      await userRef.update(updates);
+
       user.sendEmailVerification();
       await user.updateProfile({ displayName: name});
 

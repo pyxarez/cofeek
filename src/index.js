@@ -16,9 +16,11 @@ import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
 import SearchResultsPageContainer from './containers/SearchResultsPage';
 import CheckoutPageContainer from './containers/CheckoutPage';
+import ProfilePageContainer from './containers/ProfilePage';
 
 import { auth } from './firebaseApp';
 import { listenToCart } from './store/actions/CartActions';
+import { listenToProfileData } from './store/actions/ProfilePageActions';
 
 import './index.css';
 
@@ -32,6 +34,7 @@ auth.onAuthStateChanged(user => {
     console.log(user);
     console.groupEnd('onAuthState');
     store.dispatch( listenToCart(user) );
+    store.dispatch( listenToProfileData(user.uid) );
   } else {
     auth.signInAnonymously()
       .then(info => console.log(`Я родился: ${info}`))
@@ -63,6 +66,8 @@ ReactDOM.render(
         <Route path='about' component={ AboutPage }/>
 
         <Route path='login' component={ LoginSignUpPage }/>
+
+        <Route path='profile' component={ ProfilePageContainer }/>
       </Route>
     </Router>
   </Provider>,

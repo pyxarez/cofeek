@@ -110,7 +110,7 @@ export class SignUpForm extends Component {
           type='password'
           text='Пароль'
           placeholder='Новый пароль'/>
-        <p className={ styles.passwordHint }>Пароль регистрозависим и должен содержать как минимум 8 символов в длину</p>
+        <p className={ styles.passwordHint }>Пароль регистрозависим и должен содержать как минимум 6 символов в длину</p>
 
         <Input
           ref={ input => this.repeatPasswordInput = input }
