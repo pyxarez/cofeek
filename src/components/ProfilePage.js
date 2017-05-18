@@ -10,12 +10,12 @@ import notificationsImage from './ProfilePage.res/notifications.svg';
 
 import styles from './ProfilePage.res/ProfilePage.css';
 
-const ProfilePage = ({ userName, children }) => {
+const ProfilePage = ({ userName, children, location }) => {
   if (!auth.currentUser || auth.currentUser.isAnonymous) return <div className={ styles.container }>Незарегистрированный пользователь. <Link to='/login'>Войти</Link></div>;
   
   return (
-    <main>
-      <div className={ styles.container }>
+    <main className={ styles.mainContainer }>
+      <div className={ location.pathname === '/profile' ? styles.container : styles.containerHidden }>
         <div className={ styles.userInfoWrapper }>
           <span className={ styles.userIcon }>{ userName[0] }</span>
           <span className={ styles.userName }>{ userName }</span>

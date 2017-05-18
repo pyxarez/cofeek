@@ -15,12 +15,23 @@ export class ProfileSettings extends Component {
     isPasswordValid: true,
     isRepeatPassword: true,
   }
+
+  toggleNameEmailForm = () => {
+    this.setState(prevState => ({ nameEmailFormState: !prevState.nameEmailFormState }));
+  }
+
+  togglePasswordForm = () => {
+    this.setState(prevState => ({ passwordFormState: !prevState.passwordFormState }));
+  }
+
   render() {
     const {
       displayName,
       email
     } = auth.currentUser;
     const {
+      nameEmailFormState,
+      passwordFormState,
       isNameValid,
       isEmailValid,
       isPasswordValid,
@@ -29,21 +40,40 @@ export class ProfileSettings extends Component {
 
     return (
       <section className={ styles.container }>
-        <div>
-          
-        </div>
-        <form action="">
-          <Input text='Имя' defaultValue={ displayName } isValid={ isNameValid } />
-          <Input text='Email' defaultValue={ email } isValid={ isEmailValid } />
-          <button>Сохранить изменения</button>
-          <span>Отменить</span>
-        </form>
-        <form action="">
-          <Input text='Пароль' placeholder='******' isValid={ true } type='password'/>
-          <Input text='Повторите пароль' placeholder='******' isValid={ true } type='password'/>
-          <button>Сохранить изменения</button>
-          <span>Отменить</span>
-        </form>
+        { nameEmailFormState
+            ? <form className={ styles.wrapper }>
+                 <Input text='Имя' defaultValue={ displayName } isValid={ isNameValid } />
+                 <Input text='Email' defaultValue={ email } isValid={ isEmailValid } />
+                 <button className={ styles.saveButton } type='submit' onClick={e => e.preventDefault() }>Сохранить изменения</button>
+                 <span className={ styles.formToggler } onClick={ this.toggleNameEmailForm }>Отменить</span>
+               </form>
+                
+             : <div className={ styles.wrapper }>
+                 <div className={ styles.stubWrapper }>
+                   <span className={ styles.stubTitle }>Имя</span>
+                   { displayName }
+                 </div>
+                 <div className={ styles.stubWrapper }>
+                   <span className={ styles.stubTitle }>Email</span>
+                   { email }
+                 </div>
+                 <span className={ styles.formToggler } onClick={ this.toggleNameEmailForm }>Изменить</span>
+               </div>}
+
+        { passwordFormState
+            ? <form className={ styles.wrapper }>
+                <Input text='Пароль' placeholder='******' isValid={ true } type='password'/>
+                <Input text='Повторите пароль' placeholder='******' isValid={ true } type='password'/>
+                <button className={ styles.saveButton } type='submit' onClick={e => e.preventDefault() }>Сохранить изменения</button>
+                <span className={ styles.formToggler } onClick={ this.togglePasswordForm }>Отменить</span>
+              </form>
+            : <div className={ styles.wrapper }>
+                <div className={ styles.stubWrapper }>
+                  <span className={ styles.stubTitle }>Пароль</span>
+                  ******
+                </div>
+                <span className={ styles.formToggler } onClick={ this.togglePasswordForm }>Изменить</span>
+              </div> }
       </section>
     );
   }

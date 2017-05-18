@@ -1,0 +1,29 @@
+.container {
+  heigth: 100%;
+}
+
+.wrapper {
+  &:first-child {
+    margin-bottom: 50px;
+  }
+}
+
+.stub-wrapper {
+  margin-bottom: 30px;
+}
+
+.stub-title {
+  display: block;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.form-toggler {
+  cursor: pointer;
+}
+
+.save-button {
+  composes: buttons from '../../assets/general.css';
+  margin: 70px 0 20px 0;
+  height: 40px
+}
