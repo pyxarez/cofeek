@@ -79,11 +79,11 @@ $border-color: color(black a(70%));
 }
 
 .mail-input {
-  /*composes: inputs from '../../assets/general.css';*/
   composes: decorated-input from '../../assets/general.css';
   margin: 0;
   border: 1px solid gray;
-  width: 230px;
+  width: 100%;
+  max-width: 230px;
 }
 
 .mail-button {

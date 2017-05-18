@@ -1,0 +1,42 @@
+$button-height: 40px;
+
+.title {
+  text-align: center;
+}
+
+.paragraph {
+  text-align: center;
+  margin: 30px 0 90px 0;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.profile-button {
+  max-width: 140px;
+  height: $button-height;
+
+  &:hover {
+    color: white;
+    background: color(black a(100%));
+  }
+
+  &:first-child {
+    margin-right: 15px;
+  }
+}
+
+.inactive-button {
+  composes: buttons from '../../assets/general.css';
+  composes: profile-button;
+}
+
+.active-button {
+  composes: buttons from '../../assets/general.css';
+  composes: profile-button;
+  color: white;
+  background: color(black a(100%));
+}

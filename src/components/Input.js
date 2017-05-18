@@ -10,6 +10,7 @@ export class Input extends Component {
     isValid: PropTypes.bool,
     maxLength: PropTypes.number,
     type: PropTypes.string,
+    defaultValue: PropTypes.string,
   }
 
   static defaultProps = {
@@ -26,7 +27,8 @@ export class Input extends Component {
       placeholder,
       isValid,
       maxLength,
-      type
+      type,
+      defaultValue
     } = this.props;
 
     return (
@@ -37,6 +39,7 @@ export class Input extends Component {
           ref={ input => this.input = input }
           type={ type }
           placeholder={ placeholder }
+          defaultValue={ defaultValue }
           maxLength={ maxLength }/>
       </label>
     );

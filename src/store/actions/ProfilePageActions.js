@@ -1,11 +1,21 @@
 import {
-  USER_DATA_RECEIVED
+  USER_DATA_RECEIVED,
+  TOGGLE_NOTIFICATIONS,
+  USER_DATA_SAVED,
+  TOGGLE_SUCCESS_PANEL,
 } from '../constants/ProfilePage.js';
-import { database } from '../../firebaseApp';
+import { database, auth } from '../../firebaseApp';
 
 const userDataReceived = data => ({
   type: USER_DATA_RECEIVED,
   payload: { ...data },
+});
+
+const userDataSuccessfullySaved = userName => ({
+  type: USER_DATA_SAVED,
+  payload: {
+    userName,
+  }
 });
 
 export const listenToProfileData = (userId) =>
@@ -20,6 +30,37 @@ export const listenToProfileData = (userId) =>
       } else {
         dispatch( userDataReceived({}) );
       }
+    } catch(error) {
+      throw Error(error);
+    }
+  }
+
+export const toggleNotifications = () =>
+  async (dispatch, getState) => {
+    try {
+      const { profilePage } = getState();
+      const notifRef = database.ref(`users/${auth.currentUser.uid}/profile`);
+      const updates = {
+        notifications: !profilePage.notifications,
+      };
+
+      await notifRef.update(updates);
+      dispatch({ type: TOGGLE_NOTIFICATIONS });
+      return;
+    } catch(error) {
+      throw Error(error);
+    }
+  }
+
+export const saveEmailAndName = (name, newEmail) =>
+  async dispatch => {
+    try {
+      await auth.currentUser.updateProfile({ displayName: name });
+      await auth.currentUser.updateEmail(newEmail)
+
+      dispatch( userDataSuccessfullySaved(name) );
+      dispatch({ type: TOGGLE_SUCCESS_PANEL });
+      setTimeout(() => dispatch({ type: TOGGLE_SUCCESS_PANEL }), 400);
     } catch(error) {
       throw Error(error);
     }

@@ -1,13 +1,13 @@
 .container {
-  padding: 100px 10px 120px 10px;
-  min-height: 90%;
+  padding: 100px 10px 0 10px;
+  margin-bottom: 200px;
+  min-height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
 
 .user-info-wrapper {
-  font-weight: bold;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -26,9 +26,12 @@
   font-size: 23px;
 }
 
+.user-name {
+  font-weight: bold;
+}
+
 .exit-link {
   text-decoration: none;
-  font-weight: normal;
   color: color(black a(40%));
 }
 
@@ -52,18 +55,70 @@
   margin-right: 15px;
 }
 
-.payments-history {
-  composes: category;
+.link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
 }
 
-.wish-list {
-  composes: category;
+.category {
+  opacity: .6;
 }
 
-.account-settings {
-  composes: category;
+.active-link {
+  opacity: 1;
 }
 
-.notifications {
-  composes: category;
+.back-to-profile-link {
+  composes: link;
+  margin-bottom: 30px;
+}
+
+.child-container {
+  padding: 100px 10px 120px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  background: white;
+  transition: opacity .3s ease-out;
+}
+
+.child-container-hidden {
+  composes: child-container;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility .3s ease-out, opacity .3s ease-out;
+}
+
+.child-container-visible {
+  composes: child-container;
+  visibility: visible;
+  opacity: 1;
+}
+
+.back-to-profile-link {
+  position: relative;
+  padding-left: 10px;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid black;
+  }
+}
+
+@media only screen and (width <= 480px) {
+  .category {
+    opacity: 1;
+  }
 }

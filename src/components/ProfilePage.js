@@ -10,48 +10,64 @@ import notificationsImage from './ProfilePage.res/notifications.svg';
 
 import styles from './ProfilePage.res/ProfilePage.css';
 
-const ProfilePage = ({ profilePage }) => {
+const ProfilePage = ({ userName, children }) => {
+  if (!auth.currentUser || auth.currentUser.isAnonymous) return <div className={ styles.container }>Незарегистрированный пользователь. <Link to='/login'>Войти</Link></div>;
+  
   return (
-    <main className={ styles.container }>
-      <div className={ styles.userInfoWrapper }>
-        <span className={ styles.userIcon }>{ profilePage.userName[0] }</span>
-        { profilePage.userName }
-        <Link className={ styles.exitLink } onClick={ () => auth.signOut() } to='/home'>Выйти</Link>
+    <main>
+      <div className={ styles.container }>
+        <div className={ styles.userInfoWrapper }>
+          <span className={ styles.userIcon }>{ userName[0] }</span>
+          <span className={ styles.userName }>{ userName }</span>
+          <Link className={ styles.exitLink } onClick={ () => auth.signOut() } to='/home'>Выйти</Link>
+        </div>
+
+        <ul className={ styles.list }>
+          <li className={ styles.category }>
+            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/wishlist'>
+              <img className={ styles.categoryImage } src={ paymentsHistoryImage } alt=""/>
+              История покупок
+            </Link>
+          </li>
+
+          <li className={ styles.category }>
+            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/wishlist'>
+              <img className={ styles.categoryImage } src={ wishListImage } alt=""/>
+              Список желаемого
+            </Link>
+          </li>
+
+          <li className={ styles.category }>
+            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/settings'>
+              <img className={ styles.categoryImage } src={ accountSettingsImage } alt=""/>
+              Настройка аккаунта
+            </Link>
+          </li>
+
+          <li className={ styles.category }>
+            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/notifications'>
+              <img className={ styles.categoryImage } src={ notificationsImage } alt=""/>
+              Уведомления
+            </Link>
+          </li>
+        </ul>
       </div>
 
-      <ul className={ styles.list }>
-        <li className={ styles.paymentsHistory }>
-          <img className={ styles.categoryImage } src={ paymentsHistoryImage } alt=""/>
-          История покупок
-        </li>
+      <div
+        className={ children
+          ? styles.childContainerVisible
+          : styles.childContainerHidden }>
 
-        <li className={ styles.wishList }>
-          <img className={ styles.categoryImage } src={ wishListImage } alt=""/>
-          Список желаемого
-        </li>
-
-        <li className={ styles.accountSettings }>
-          <img className={ styles.categoryImage } src={ accountSettingsImage } alt=""/>
-          Настройка аккаунта
-        </li>
-
-        <li className={ styles.notifications }>
-          <img className={ styles.categoryImage } src={ notificationsImage } alt=""/>
-          Уведомления
-        </li>
-      </ul>
-
+        <Link className={ styles.backToProfileLink } to='/profile' >Назад</Link>
+        { children }
+      </div>
     </main>
   );
 }
 
 ProfilePage.propTypes = {
-  profilePage: PropTypes.shape({
-    userName: PropTypes.string.isRequired,
-    paymentsHistory: PropTypes.object.isRequired,
-    wishList: PropTypes.object.isRequired,
-    notifications: PropTypes.bool.isRequired,
-  }).isRequired,
+  userName: PropTypes.string.isRequired,
+  children: PropTypes.element,
 }
 
 export default ProfilePage;

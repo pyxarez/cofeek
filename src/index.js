@@ -16,7 +16,10 @@ import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
 import SearchResultsPageContainer from './containers/SearchResultsPage';
 import CheckoutPageContainer from './containers/CheckoutPage';
+
 import ProfilePageContainer from './containers/ProfilePage';
+import ProfileNotifications from './containers/ProfileNotifications';
+import ProfileSettings from './containers/ProfileSettings';
 
 import { auth } from './firebaseApp';
 import { listenToCart } from './store/actions/CartActions';
@@ -67,7 +70,10 @@ ReactDOM.render(
 
         <Route path='login' component={ LoginSignUpPage }/>
 
-        <Route path='profile' component={ ProfilePageContainer }/>
+        <Route path='profile' component={ ProfilePageContainer }>
+          <Route path='notifications' component={ ProfileNotifications }/>
+          <Route path='settings' component={ ProfileSettings }/>
+        </Route>
       </Route>
     </Router>
   </Provider>,
