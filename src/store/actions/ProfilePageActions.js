@@ -65,3 +65,15 @@ export const saveEmailAndName = (name, newEmail) =>
       throw Error(error);
     }
   }
+
+export const savePassword = newPassword =>
+  async dispatch => {
+    try{
+      await auth.currentUser.updatePassword(newPassword);
+
+      dispatch({ type: TOGGLE_SUCCESS_PANEL });
+      setTimeout(() => dispatch({ type: TOGGLE_SUCCESS_PANEL }), 1000);
+    } catch(error) {
+      throw Error(error);
+    }
+  }

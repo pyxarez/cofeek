@@ -3,16 +3,13 @@ import { bindActionCreators } from 'redux';
 
 import ProfileSettings from '../components/ProfileSettings';
 
-import { saveEmailAndName } from '../store/actions/ProfilePageActions';
-
-const mapStateToProps = ({ profilePage }) => ({
-  userName: profilePage.userName,
-});
+import { saveEmailAndName, savePassword } from '../store/actions/ProfilePageActions';
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
     saveEmailAndName,
+    savePassword,
   }, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileSettings);
+export default connect(null, mapDispatchToProps)(ProfileSettings);
