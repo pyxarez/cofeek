@@ -2,6 +2,7 @@
   display: flex;
   margin: 10px 20px 0 0;
   align-items: flex-end;
+  height: 123px;
 
   &:last-child {
     margin-bottom: 10px;
@@ -14,7 +15,6 @@
 
 .product-picture {
   width: 115px;
-  height: 123px;
 }
 
 .product-name {
