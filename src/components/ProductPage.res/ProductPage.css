@@ -119,3 +119,10 @@
     margin-bottom: 20px;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .big-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

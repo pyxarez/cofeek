@@ -9,6 +9,7 @@ import {
   increaseProductCount,
   decreaseProductCount,
   clearCounter,
+  addProductToWishList,
 } from '../store/actions/ProductPageActions';
 import { addProductToCart } from '../store/actions/CartActions';
 
@@ -34,6 +35,7 @@ export class ProductPageContainer extends Component {
       id: PropTypes.string.isRequired,
     }),
     addProductToCart: PropTypes.func.isRequired,
+    addProductToWishList: PropTypes.func.isRequired,
     getProductData: PropTypes.func.isRequired,
   }
 
@@ -58,6 +60,26 @@ export class ProductPageContainer extends Component {
       category,
       subcategory,
     }).then(() => clearCounter());
+  }
+
+  addToWishList = () => {
+    const {
+      id,
+      name,
+      cost,
+      url,
+      category,
+      subcategory,
+    } = this.props.productPage;
+
+    this.props.addProductToWishList({
+      id,
+      name,
+      cost,
+      url,
+      category,
+      subcategory,
+    }).catch(() => {});
   }
 
   componentDidMount = () => {
@@ -107,6 +129,7 @@ export class ProductPageContainer extends Component {
       params={ params }
       productData={ productPage }
       addToCart={ this.addToCart }
+      addToWishList={ this.addToWishList }
       increaseProductCount={ increaseProductCount }
       decreaseProductCount={ decreaseProductCount }/>
     );
@@ -124,6 +147,7 @@ const mapDispatchToProps = (dispatch) => ({
     increaseProductCount,
     decreaseProductCount,
     clearCounter,
+    addProductToWishList,
   }, dispatch)
 });
 

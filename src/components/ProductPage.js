@@ -13,6 +13,7 @@ export const ProductPage = ({
   params,
   productData,
   addToCart,
+  addToWishList,
   increaseProductCount,
   decreaseProductCount,
 }) => {
@@ -45,7 +46,7 @@ export const ProductPage = ({
           </div>
           <div className={ styles.productButtons }>
             <button className={ styles.addToCartButton } onClick={ addToCart }>Добавить в корзину</button>
-            {/* <button className={ styles.addToWishListButton }>В список желаемого</button> */}
+            <button className={ styles.addToWishListButton } onClick={ addToWishList }>В список желаемого</button>
           </div>
         </div>
       </div>
@@ -63,6 +64,7 @@ ProductPage.propTypes = {
     url: PropTypes.string.isRequired,
   }).isRequired,
   addToCart: PropTypes.func.isRequired,
+  addToWishList: PropTypes.func.isRequired,
   increaseProductCount: PropTypes.func.isRequired,
   decreaseProductCount: PropTypes.func.isRequired,
   params: PropTypes.shape({
