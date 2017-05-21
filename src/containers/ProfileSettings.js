@@ -5,6 +5,10 @@ import ProfileSettings from '../components/ProfileSettings';
 
 import { saveEmailAndName, savePassword } from '../store/actions/ProfilePageActions';
 
+const mapStateToProps = ({ profilePage }) => ({
+  errorMessage: profilePage.errorMessage,
+});
+
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
     saveEmailAndName,

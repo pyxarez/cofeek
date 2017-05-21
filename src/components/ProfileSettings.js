@@ -21,6 +21,10 @@ export class ProfileSettings extends Component {
   static propTypes = {
     saveEmailAndName: PropTypes.func.isRequired,
     savePassword: PropTypes.func.isRequired,
+    errorMessage: PropTypes.shape({
+      message: PropTypes.string.isRequired,
+      code: PropTypes.string.isRequired,
+    }),
   }
 
   handleNameAndEmailSave = event => {

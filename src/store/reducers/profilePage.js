@@ -3,6 +3,8 @@ import {
   TOGGLE_NOTIFICATIONS,
   USER_DATA_SAVED,
   TOGGLE_SUCCESS_PANEL,
+  USER_DATA_NOT_SAVED,
+  USER_PASSWORD_NOT_SAVED,
 } from '../constants/ProfilePage.js';
 
 const initialState = {
@@ -11,6 +13,14 @@ const initialState = {
   wishList: {},
   notifications: true,
   successPanelState: false,
+  nameEmailFormErrorMessage: {
+    code: '',
+    message: '',
+  },
+  passwordFormErrorMessage: {
+    code: '',
+    message: '',
+  },
 }
 
 const profilePage = (state = initialState, { type, payload }) => {
@@ -29,12 +39,21 @@ const profilePage = (state = initialState, { type, payload }) => {
       return {
         ...state,
         userName: payload.userName,
+        nameEmailFormErrorMessage: {
+          code: '',
+          message: '',
+        },
       };
     case TOGGLE_SUCCESS_PANEL:
       return {
         ...state,
         successPanelState: !state.successPanelState,
-      }
+      };
+    case USER_DATA_NOT_SAVED:
+      return {
+        ...state,
+        nameEmailFormErrorMessage: { ...payload.errorMessage },
+      };
     default:
       return state;
   }
