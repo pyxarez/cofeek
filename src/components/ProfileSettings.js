@@ -15,7 +15,7 @@ export class ProfileSettings extends Component {
     isNameValid: true,
     isEmailValid: true,
     isPasswordValid: true,
-    isRepeatPassword: true,
+    isRepeatPasswordValid: true,
   }
 
   static propTypes = {
@@ -55,7 +55,8 @@ export class ProfileSettings extends Component {
 
     if (isFormValid) {
       saveEmailAndName(name, email)
-        .then(() => this.toggleNameEmailForm());
+        .then(() => this.toggleNameEmailForm())
+        .catch(error => {});
     }
   }
 
@@ -84,9 +85,15 @@ export class ProfileSettings extends Component {
       isFormValid = false;
     }
 
-    if (isFormValid && validateIdentity(password, repeatPassword)) {
+    if (!validateIdentity(password, repeatPassword)) {
+      isFormValid = false;
+      this.setState({ isRepeatPasswordValid: false, isPasswordValid: false });
+    }
+
+    if (isFormValid) {
       savePassword(password)
-        .then(() => this.togglePasswordForm());
+        .then(() => this.togglePasswordForm())
+        .catch(() => {});
     }
   }
 
@@ -101,7 +108,7 @@ export class ProfileSettings extends Component {
   render() {
     const {
       displayName,
-      email
+      email,
     } = auth.currentUser;
     const {
       nameEmailFormState,
@@ -109,8 +116,12 @@ export class ProfileSettings extends Component {
       isNameValid,
       isEmailValid,
       isPasswordValid,
-      isRepeatPassword,
+      isRepeatPasswordValid,
     } = this.state;
+    const {
+      nameEmailFormErrorMessage,
+      passwordFormErrorMessage,
+    } = this.props;
 
     return (
       <section className={ styles.container }>
@@ -118,6 +129,7 @@ export class ProfileSettings extends Component {
             ? <form className={ styles.wrapper }>
                  <Input ref={ input => this.name = input} text='Имя' defaultValue={ displayName } isValid={ isNameValid } />
                  <Input ref={ input => this.email = input} text='Email' defaultValue={ email } isValid={ isEmailValid } />
+                 <span className={ styles.errorMessage }>{ nameEmailFormErrorMessage.message }</span>
                  <button className={ styles.saveButton } onClick={ this.handleNameAndEmailSave } type='submit'>
                     Сохранить изменения
                  </button>
@@ -138,8 +150,9 @@ export class ProfileSettings extends Component {
 
         { passwordFormState
             ? <form className={ styles.wrapper }>
-                <Input ref={ input => this.password = input} text='Пароль' placeholder='******' isValid={ true } type='password'/>
-                <Input ref={ input => this.repeatPassword = input} text='Повторите пароль' placeholder='******' isValid={ true } type='password'/>
+                <Input ref={ input => this.password = input} text='Пароль' placeholder='******' isValid={ isPasswordValid } type='password'/>
+                <Input ref={ input => this.repeatPassword = input} text='Повторите пароль' placeholder='******' isValid={ isRepeatPasswordValid } type='password'/>
+                <span className={ styles.errorMessage }>{ passwordFormErrorMessage.message }</span>
                 <button className={ styles.saveButton } onClick={ this.handlePasswordSave } type='submit' >Сохранить изменения</button>
                 <span className={ styles.formToggler } onClick={ this.togglePasswordForm }>Отменить</span>
               </form>

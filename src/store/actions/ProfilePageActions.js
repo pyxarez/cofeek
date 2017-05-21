@@ -3,6 +3,8 @@ import {
   TOGGLE_NOTIFICATIONS,
   USER_DATA_SAVED,
   TOGGLE_SUCCESS_PANEL,
+  USER_DATA_NOT_SAVED,
+  USER_PASSWORD_NOT_SAVED,
 } from '../constants/ProfilePage.js';
 import { database, auth } from '../../firebaseApp';
 
@@ -15,6 +17,20 @@ const userDataSuccessfullySaved = userName => ({
   type: USER_DATA_SAVED,
   payload: {
     userName,
+  }
+});
+
+const userDataNotSaved = error =>({
+  type: USER_DATA_NOT_SAVED,
+  payload: {
+    error
+  }
+});
+
+const userPasswordNotSaved = error =>({
+  type: USER_PASSWORD_NOT_SAVED,
+  payload: {
+    error
   }
 });
 
@@ -62,6 +78,7 @@ export const saveEmailAndName = (name, newEmail) =>
       dispatch({ type: TOGGLE_SUCCESS_PANEL });
       setTimeout(() => dispatch({ type: TOGGLE_SUCCESS_PANEL }), 400);
     } catch(error) {
+      dispatch( userDataNotSaved(error) );
       throw Error(error);
     }
   }
@@ -74,6 +91,7 @@ export const savePassword = newPassword =>
       dispatch({ type: TOGGLE_SUCCESS_PANEL });
       setTimeout(() => dispatch({ type: TOGGLE_SUCCESS_PANEL }), 1000);
     } catch(error) {
+      dispatch( userPasswordNotSaved(error) );
       throw Error(error);
     }
   }

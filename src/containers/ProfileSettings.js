@@ -6,7 +6,8 @@ import ProfileSettings from '../components/ProfileSettings';
 import { saveEmailAndName, savePassword } from '../store/actions/ProfilePageActions';
 
 const mapStateToProps = ({ profilePage }) => ({
-  errorMessage: profilePage.errorMessage,
+  nameEmailFormErrorMessage: profilePage.nameEmailFormErrorMessage,
+  passwordFormErrorMessage: profilePage.passwordFormErrorMessage,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 });
 
-export default connect(null, mapDispatchToProps)(ProfileSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileSettings);

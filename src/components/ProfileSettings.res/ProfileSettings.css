@@ -27,3 +27,7 @@
   margin: 70px 0 20px 0;
   height: 40px
 }
+
+.error-message {
+  color: red;
+}

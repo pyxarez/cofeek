@@ -52,7 +52,12 @@ const profilePage = (state = initialState, { type, payload }) => {
     case USER_DATA_NOT_SAVED:
       return {
         ...state,
-        nameEmailFormErrorMessage: { ...payload.errorMessage },
+        nameEmailFormErrorMessage: { ...payload.error },
+      };
+    case USER_PASSWORD_NOT_SAVED:
+      return {
+        ...state,
+        passwordFormErrorMessage: { ...payload.error },
       };
     default:
       return state;
