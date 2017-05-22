@@ -5,6 +5,7 @@ import {
   TOGGLE_SUCCESS_PANEL,
   USER_DATA_NOT_SAVED,
   USER_PASSWORD_NOT_SAVED,
+  REMOVE_FROM_WISH_LIST_SUCCESS,
 } from '../constants/ProfilePage.js';
 
 const initialState = {
@@ -58,6 +59,11 @@ const profilePage = (state = initialState, { type, payload }) => {
       return {
         ...state,
         passwordFormErrorMessage: { ...payload.error },
+      };
+    case REMOVE_FROM_WISH_LIST_SUCCESS:
+      return {
+        ...state,
+        wishList: { ...payload }
       };
     default:
       return state;

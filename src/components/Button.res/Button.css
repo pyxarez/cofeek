@@ -1,0 +1,51 @@
+.container {
+  $btn-height: 40px;
+  $btn-color: black;
+
+  color: color($btn-color a(70%));
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  height: $btn-height;
+  line-height: $btn-height;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  transition: all .6s ease;
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    color: #eeeed1;
+    letter-spacing: 1px;
+
+    &:before {
+      transform: translateX(0);
+    }
+  }
+
+  &:before {
+    content: '';
+    z-index: -1;
+    transition: all .6s ease;
+    position: absolute;
+    top: 0;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-bottom: $btn-height solid color($btn-color a(85%));
+    transform: translateX(-100%);
+  }
+}
+
+@media only screen and (width >= 681px) {
+  .container:first-child {
+    margin-right: 10px;
+  }
+}

@@ -70,6 +70,7 @@ export class ProductPageContainer extends Component {
       url,
       category,
       subcategory,
+      count,
     } = this.props.productPage;
 
     this.props.addProductToWishList({
@@ -79,6 +80,7 @@ export class ProductPageContainer extends Component {
       url,
       category,
       subcategory,
+      count,
     }).catch(() => {});
   }
 

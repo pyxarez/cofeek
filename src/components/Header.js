@@ -8,7 +8,8 @@ import styles from './Header.res/Header.css';
 
 import burgerSVG from './Header.res/burger.min.svg';
 import phoneSVG from './Header.res/phone.min.svg';
-import cartSVG from './Header.res/cart.min.svg';
+
+import cartSVG from '../assets/images/cart.min.svg';
 
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (

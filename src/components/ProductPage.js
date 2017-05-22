@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import AddedPanelContainer from '../containers/AddedPanel';
 import ProductPageProductsContainer from '../containers/ProductPageProducts';
 
+import Button from './Button';
+
 import increase from '../assets/images/add.min.svg';
 import decrease from '../assets/images/delete.min.svg';
 
@@ -45,8 +47,8 @@ export const ProductPage = ({
             <img className={ styles.buttonDecrease } onClick={ decreaseProductCount } src={ decrease } alt=""/>
           </div>
           <div className={ styles.productButtons }>
-            <button className={ styles.addToCartButton } onClick={ addToCart }>Добавить в корзину</button>
-            <button className={ styles.addToWishListButton } onClick={ addToWishList }>В список желаемого</button>
+            <Button text='Добавить в корзину' onClick={ addToCart }/>
+            <Button text='В список желаемого' onClick={ addToWishList }/>
           </div>
         </div>
       </div>

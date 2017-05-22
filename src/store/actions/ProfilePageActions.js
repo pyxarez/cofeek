@@ -5,8 +5,10 @@ import {
   TOGGLE_SUCCESS_PANEL,
   USER_DATA_NOT_SAVED,
   USER_PASSWORD_NOT_SAVED,
+  REMOVE_FROM_WISH_LIST_SUCCESS,
 } from '../constants/ProfilePage.js';
 import { database, auth } from '../../firebaseApp';
+import { filterObject } from '../../utils/helpers';
 
 const userDataReceived = data => ({
   type: USER_DATA_RECEIVED,
@@ -19,7 +21,6 @@ const userDataSuccessfullySaved = userName => ({
     userName,
   }
 });
-
 const userDataNotSaved = error =>({
   type: USER_DATA_NOT_SAVED,
   payload: {
@@ -31,6 +32,13 @@ const userPasswordNotSaved = error =>({
   type: USER_PASSWORD_NOT_SAVED,
   payload: {
     error
+  }
+});
+
+const removeFromWishListSuccess = wishList => ({
+  type: REMOVE_FROM_WISH_LIST_SUCCESS,
+  payload: {
+    ...wishList
   }
 });
 
@@ -92,6 +100,23 @@ export const savePassword = newPassword =>
       setTimeout(() => dispatch({ type: TOGGLE_SUCCESS_PANEL }), 1000);
     } catch(error) {
       dispatch( userPasswordNotSaved(error) );
+      throw Error(error);
+    }
+  }
+
+export const removeItemFromWishList = product =>
+  async (dispatch, getState) => {
+    try {
+      const { profilePage } = getState();
+      const filteredWishList = filterObject(profilePage.wishList, product);
+      const userWishListRef = database.ref(`users/${auth.currentUser.uid}/profile`);
+      const updates = {
+        wishList: filteredWishList,
+      }
+
+      await userWishListRef.update(updates);
+      dispatch( removeFromWishListSuccess(filteredWishList) );
+    } catch(error) {
       throw Error(error);
     }
   }

@@ -21,6 +21,8 @@ import ProfilePageContainer from './containers/ProfilePage';
 import ProfileNotifications from './containers/ProfileNotifications';
 import ProfileSettings from './containers/ProfileSettings';
 
+import WishList from './containers/WishList';
+
 import { auth } from './firebaseApp';
 import { listenToCart } from './store/actions/CartActions';
 import { listenToProfileData } from './store/actions/ProfilePageActions';
@@ -73,6 +75,7 @@ ReactDOM.render(
         <Route path='profile' component={ ProfilePageContainer }>
           <Route path='notifications' component={ ProfileNotifications }/>
           <Route path='settings' component={ ProfileSettings }/>
+          <Route path='wishlist' component={ WishList }/>
         </Route>
       </Route>
     </Router>

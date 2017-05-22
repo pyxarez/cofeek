@@ -128,7 +128,7 @@ export const addProductToCart = product =>
         dispatch( addingCartProductSuccess(product) );
         dispatch( toggleAddedPanelState() );
         setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
-        return;
+        return product;
       } else {
         const updates = {
          [`/${product.id}`]: {

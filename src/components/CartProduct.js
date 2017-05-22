@@ -19,7 +19,7 @@ const CartProduct = ({
 }) => {
   return (
     <div className={styles.common}>
-      <img className={styles.productPicture}src={url} alt="product"/>
+      <img className={styles.productPicture} src={url} alt="product"/>
       <div className={styles.container}>
         <span className={styles.productName}>{name}</span>
         <div className={styles.controlElems}>

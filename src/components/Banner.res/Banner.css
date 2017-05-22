@@ -35,17 +35,54 @@
 }
 
 .about-link {
-  composes: buttons from '../../assets/general.css';
-  border: 1px solid black;
-  display: inline-block;
-  max-width: 150px;
-  margin-top: 2%;
-  height: 40px;
-  line-height: 38px;
-  color: color(black a(80%));
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  position: relative;
+  text-transform: uppercase;
+  padding: 0 3.4em;
+  max-width: 320px;
   text-decoration: none;
-  text-align: center;
+
+  background: color(black a(70%));
+  transition: all .6s ease;
+
+  &:hover {
+    background: color(white a(90%));
+    color: black;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    .rect {
+      stroke: black;
+      stroke-width: 5;
+      stroke-dasharray: 15, 305;
+      stroke-dashoffset: 48;
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
 }
+
+.svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0; 
+  width: 100%;
+}
+
+.rect {
+  fill: none;
+  stroke: white;
+  stroke-width: 0;
+  stroke-dasharray: 422, 0;
+  transition: all .6s ease;
+}
+
 
 @media only screen and (width <= 480px) {
   .title {

@@ -4,10 +4,9 @@ import {
   INCREASE_PRODUCT_COUNT,
   DECREASE_PRODUCT_COUNT,
   CLEAR_COUNTER,
-  ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
-  ADDING_PRODUCT_TO_WISHLIST_FAILURE,
+  // ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
+  // ADDING_PRODUCT_TO_WISHLIST_FAILURE,
 } from '../constants/ProductPage';
-
 import { auth, database } from '../../firebaseApp.js';
 
 const gettingProductDataSuccess = value => ({
