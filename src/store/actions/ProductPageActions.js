@@ -4,7 +4,7 @@ import {
   INCREASE_PRODUCT_COUNT,
   DECREASE_PRODUCT_COUNT,
   CLEAR_COUNTER,
-  // ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
+  ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
   // ADDING_PRODUCT_TO_WISHLIST_FAILURE,
 } from '../constants/ProductPage';
 import { auth, database } from '../../firebaseApp.js';
@@ -29,6 +29,13 @@ export const increaseProductCount = () => ({
 
 export const decreaseProductCount = () => ({
   type: DECREASE_PRODUCT_COUNT
+});
+
+export const addingProductToWishlistSuccess = product => ({
+  type: ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
+  payload: {
+    product,
+  }
 });
 
 export const getProductData = ({ category, subcategory, id }) =>
@@ -61,6 +68,7 @@ export const addProductToWishList = product =>
       };
 
       await userWishListRef.update(updates);
+      dispatch( addingProductToWishlistSuccess(product) );
     } catch(error) {
       throw Error(error);
     }

@@ -1,7 +1,7 @@
-.container {
-  $btn-height: 35px;
-  $btn-color: black;
+$btn-height: 35px;
+$btn-color: black;
 
+.button {
   color: color($btn-color a(70%));
   cursor: pointer;
   background-color: transparent;
@@ -44,8 +44,43 @@
   }
 }
 
+.enabled {
+  composes: button;
+}
+
+.disabled {
+  composes: button;
+
+  &:after {
+    content: '';
+    z-index: -1;
+    transition: all .6s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -50px;
+    border-left: 50px solid transparent;
+    border-top: $btn-height solid color($btn-color a(85%));
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: #eeeed1;
+    letter-spacing: 1px;
+
+    &:before {
+      transform: translateX(-50%);
+    }
+
+    &:after {
+      transform: translateX(50%);
+    }
+  }
+}
+
 @media only screen and (width >= 681px) {
-  .container:first-child {
+  .button:first-child {
     margin-right: 10px;
   }
 }

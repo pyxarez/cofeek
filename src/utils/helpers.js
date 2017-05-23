@@ -62,3 +62,6 @@ export const decreaseTargetCount = iterateByObjAndApplyFuncToEveryElem((accum, i
 });
 
 
+export const find = (object, key) =>
+  Object.keys(object).find(subObject => subObject.id === key);
+

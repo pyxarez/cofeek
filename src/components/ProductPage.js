@@ -18,6 +18,7 @@ export const ProductPage = ({
   addToWishList,
   increaseProductCount,
   decreaseProductCount,
+  isWished,
 }) => {
   const {
     name,
@@ -26,6 +27,8 @@ export const ProductPage = ({
     description,
     url,
   } = productData;
+    console.log('is wished');
+    console.log(isWished);
 
   return (
     <section className={ styles.common }>
@@ -48,7 +51,7 @@ export const ProductPage = ({
           </div>
           <div className={ styles.productButtons }>
             <Button text='Добавить в корзину' onClick={ addToCart }/>
-            <Button text='В список желаемого' onClick={ addToWishList }/>
+            <Button text={ isWished ? 'В желаемом' : 'В список желаемого' } onClick={ addToWishList } disabled={ isWished }/>
           </div>
         </div>
       </div>
@@ -74,6 +77,7 @@ ProductPage.propTypes = {
     subcategory: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }),
+  isWished: PropTypes.bool.isRequired,
 }
 
 export default ProductPage;

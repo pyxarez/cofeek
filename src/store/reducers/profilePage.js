@@ -7,6 +7,9 @@ import {
   USER_PASSWORD_NOT_SAVED,
   REMOVE_FROM_WISH_LIST_SUCCESS,
 } from '../constants/ProfilePage.js';
+import {
+  ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
+} from '../constants/ProductPage';
 
 const initialState = {
   userName: '',
@@ -64,6 +67,14 @@ const profilePage = (state = initialState, { type, payload }) => {
       return {
         ...state,
         wishList: { ...payload }
+      };
+    case ADDING_PRODUCT_TO_WISHLIST_SUCCESS:
+      return {
+        ...state,
+        wishList: {
+          ...state.wishList,
+          [payload.product.id]: { ...payload.product },
+        }
       };
     default:
       return state;

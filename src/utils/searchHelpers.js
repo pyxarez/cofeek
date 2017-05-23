@@ -1,3 +1,4 @@
+//Someday write regular expression...
 export const matchString = (string, query) => {
   switch(true) {
     case string.includes(query):

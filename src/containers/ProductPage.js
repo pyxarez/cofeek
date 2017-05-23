@@ -38,6 +38,7 @@ export class ProductPageContainer extends Component {
     addProductToCart: PropTypes.func.isRequired,
     addProductToWishList: PropTypes.func.isRequired,
     getProductData: PropTypes.func.isRequired,
+    wishList: PropTypes.object.isRequired,
   }
 
   addToCart = () => {
@@ -132,8 +133,12 @@ export class ProductPageContainer extends Component {
       params,
       productPage,
       increaseProductCount,
-      decreaseProductCount
+      decreaseProductCount,
+      wishList,
     } = this.props;
+    const isWished = !!wishList[productPage.id];
+    console.log('is wished');
+    console.log(isWished);
 
     return (
      <ProductPage
@@ -142,13 +147,15 @@ export class ProductPageContainer extends Component {
       addToCart={ this.addToCart }
       addToWishList={ this.addToWishList }
       increaseProductCount={ increaseProductCount }
-      decreaseProductCount={ decreaseProductCount }/>
+      decreaseProductCount={ decreaseProductCount }
+      isWished={ isWished }/>
     );
   }
 }
 
-const mapStateToProps = ({ productPage }) => ({
+const mapStateToProps = ({ productPage, profilePage }) => ({
   productPage,
+  wishList: profilePage.wishList,
 });
 
 const mapDispatchToProps = (dispatch) => ({
