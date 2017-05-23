@@ -12,7 +12,7 @@ import styles from './CheckoutPage.res/CheckoutPage.css';
 export class CheckoutPage extends Component {
   static propTypes = {
     clearCart: PropTypes.func.isRequired,
-    toggleAddedPanelState: PropTypes.func.isRequired,
+    openSuccessPanel: PropTypes.func.isRequired,
     toggleAddressForm: PropTypes.func.isRequired,
     toggleGiftTextarea: PropTypes.func.isRequired,
     checkoutPage: PropTypes.shape({
@@ -23,7 +23,7 @@ export class CheckoutPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const {
-      toggleAddedPanelState,
+      openSuccessPanel,
       clearCart,
     } = this.props;
 
@@ -39,15 +39,11 @@ export class CheckoutPage extends Component {
     } else if (!isFirstFormValid || !isCreditCardFormValid) {
       window.scrollTo(0, 0);
     } else {
-      toggleAddedPanelState()
+      openSuccessPanel(1500);
 
       setTimeout(() => {
-        toggleAddedPanelState();
-
-        setTimeout(() => {
           clearCart();
           browserHistory.push('/home');
-        }, 300);
       }, 1500);
     }
   }

@@ -7,8 +7,10 @@ import Product from '../components/Product';
 
 import {
   addProductToCart,
-  toggleAddedPanelState
 } from '../store/actions/CartActions';
+import {
+  openSuccessPanel
+} from '../store/actions/SuccessPanelActions';
 
 class ProductContainer extends Component {
   static propTypes = {
@@ -29,7 +31,9 @@ class ProductContainer extends Component {
       url,
       category,
       subcategory,
+      openSuccessPanel,
     } = this.props;
+
     this.props.addProductToCart({
       id,
       name,
@@ -38,7 +42,7 @@ class ProductContainer extends Component {
       count: 1,
       category,
       subcategory,
-    })
+    }).then(() => openSuccessPanel());
   }
 
   render() {
@@ -49,7 +53,7 @@ class ProductContainer extends Component {
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
     addProductToCart,
-    toggleAddedPanelState
+    openSuccessPanel
   }, dispatch)
 });
 

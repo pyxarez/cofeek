@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 
 import styles from './AddedPanel.res/AddedPanel.css';
 
-const AddedPanel = ({ addedPanelState, message }) => {
+const AddedPanel = ({ state, closeSuccessPanel, message }) => {
   return (
-    <div className={ addedPanelState ? styles.panelVisible : styles.panelHidden }>
+    <div className={ state ? styles.panelVisible : styles.panelHidden }>
       { message }
+    {/* Нарисовать крестик, с помощью которого буду закрывать панельку <svg><g></g></svg>*/}
     </div>
   );
 };
 
 AddedPanel.propTypes = {
-  addedPanelState: PropTypes.bool.isRequired,
+  state: PropTypes.bool.isRequired,
+  closeSuccessPanel: PropTypes.func.isRequired,
 }
 
 AddedPanel.defaultProps = {

@@ -1,5 +1,5 @@
 .container {
-  $btn-height: 40px;
+  $btn-height: 35px;
   $btn-color: black;
 
   color: color($btn-color a(70%));
@@ -10,7 +10,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 320px;
-  height: $btn-height;
+  min-height: $btn-height;
   line-height: $btn-height;
   text-transform: uppercase;
   border: 1px solid currentColor;
@@ -49,3 +49,5 @@
     margin-right: 10px;
   }
 }
+
+

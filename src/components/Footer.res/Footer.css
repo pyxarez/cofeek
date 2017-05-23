@@ -14,7 +14,7 @@ $border-color: color(black a(70%));
   $h: 80px;
   $w: 90px;
 
-  /*z-index: -1;*/
+  z-index: 0;
   width: $w;
   height: $h;
   position: absolute;
@@ -34,12 +34,13 @@ $border-color: color(black a(70%));
   &:after {
     content: '';
     display: block;
-    height: calc($h / 2);
-    width: $w;
+    height: calc($h / 2 + 1px);
+    width: calc($w + 2px);
     background: $footer-color;
     position: absolute;
     top: calc(($h / 2) - 1px);
-    left: -1px;
+    left: -2px;
+    z-index: 1;
   }
 }
 
@@ -109,7 +110,7 @@ $border-color: color(black a(70%));
 @media only screen and (width <= 480px) {
   .common {
     flex-direction: column;
-    padding: 40px 10px 0 10px;
+    padding: 50px 10px 0 10px;
   }
 
   .logo {

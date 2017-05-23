@@ -25,9 +25,11 @@
 }
 
 .product-cost-wrapper {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .delete-item {
   cursor: pointer;
+  display: block;
+  margin-top: 5px;
 }

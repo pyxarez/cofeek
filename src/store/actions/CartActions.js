@@ -69,9 +69,6 @@ export const toggleCartState = () => ({
   type: TOGGLE_CART_STATE
 });
 
-export const toggleAddedPanelState = () => ({
-  type: TOGGLE_ADDED_PANEL_STATE
-});
 
 export const clearCartSuccess = () => ({
   type: CLEAR_CART,
@@ -126,8 +123,7 @@ export const addProductToCart = product =>
 
         await ref.update(updates);
         dispatch( addingCartProductSuccess(product) );
-        dispatch( toggleAddedPanelState() );
-        setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
+
         return product;
       } else {
         const updates = {
@@ -138,8 +134,7 @@ export const addProductToCart = product =>
 
         await ref.update(updates);
         dispatch( addingCartProductSuccess(product) );
-        dispatch( toggleAddedPanelState() );
-        setTimeout(() => dispatch( toggleAddedPanelState() ), 1500);
+        
         return;
       }
     } catch(error) {

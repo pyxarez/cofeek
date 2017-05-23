@@ -11,6 +11,7 @@ import {
   clearCounter,
   addProductToWishList,
 } from '../store/actions/ProductPageActions';
+import { openSuccessPanel } from '../store/actions/SuccessPanelActions';
 import { addProductToCart } from '../store/actions/CartActions';
 
 import ProductPage from '../components/ProductPage';
@@ -49,7 +50,7 @@ export class ProductPageContainer extends Component {
       subcategory,
       count,
     } = this.props.productPage;
-    const { clearCounter } = this.props;
+    const { clearCounter, openSuccessPanel } = this.props;
 
     this.props.addProductToCart({
       id,
@@ -59,7 +60,10 @@ export class ProductPageContainer extends Component {
       count,
       category,
       subcategory,
-    }).then(() => clearCounter());
+    })
+      .then( () => openSuccessPanel(2000) )
+      .then(() => clearCounter())
+      .catch(error => console.log(error));
   }
 
   addToWishList = () => {
@@ -72,6 +76,9 @@ export class ProductPageContainer extends Component {
       subcategory,
       count,
     } = this.props.productPage;
+    const {
+      openSuccessPanel
+    } = this.props;
 
     this.props.addProductToWishList({
       id,
@@ -81,7 +88,9 @@ export class ProductPageContainer extends Component {
       category,
       subcategory,
       count,
-    }).catch(() => {});
+    })
+      .then(() => openSuccessPanel(2000))
+      .catch(error => console.log(error));
   }
 
   componentDidMount = () => {
@@ -150,6 +159,7 @@ const mapDispatchToProps = (dispatch) => ({
     decreaseProductCount,
     clearCounter,
     addProductToWishList,
+    openSuccessPanel,
   }, dispatch)
 });
 

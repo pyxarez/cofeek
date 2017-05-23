@@ -9,16 +9,25 @@ import { removeItemFromWishList } from '../store/actions/ProfilePageActions';
 import WishListProduct from '../components/WishListProduct';
 
 export class WishListProductContainer extends Component {
+  static propTypes = {
+    addProductToCart: PropTypes.func.isRequired,
+    removeItemFromWishList: PropTypes.func.isRequired,
+    product: PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      subcategory: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      cost: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  }
   addToCart = () => {
     const {
       product,
-      removeFromWishList,
     } = this.props;
 
-    // const productWith = 
-
     this.props.addProductToCart({ ...product })
-      .then(() => { removeItemFromWishList(product) });
+      .then(this.removeFromWishList);
   }
 
   removeFromWishList = () => {

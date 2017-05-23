@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {
-  toggleAddedPanelState,
   clearCart,
 } from '../store/actions/CartActions';
+import {
+  openSuccessPanel,
+} from '../store/actions/SuccessPanelActions';
 
 import {
   toggleAddressForm,
@@ -21,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
     toggleAddressForm,
     toggleGiftTextarea,
-    toggleAddedPanelState,
+    openSuccessPanel,
     clearCart,
   }, dispatch)
 });

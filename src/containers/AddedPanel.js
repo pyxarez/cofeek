@@ -2,17 +2,17 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { toggleAddedPanelState } from '../store/actions/CartActions';
+import { closeSuccessPanel } from '../store/actions/SuccessPanelActions';
 
 import AddedPanel from '../components/AddedPanel';
 
-const mapStateToProps = ({ cart }) => ({
-  addedPanelState: cart.addedPanelState,
+const mapStateToProps = ({ successPanel }) => ({
+  state: successPanel.panelState,
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({
-    toggleAddedPanelState,
+    closeSuccessPanel,
   }, dispatch)
 });
 
