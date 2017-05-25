@@ -7,11 +7,11 @@ import configureStore from './store/configureStore';
 import { Router, Route, browserHistory, Redirect } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import App from './components/App';
 import Home from './components/Home';
 import AboutPage from './components/AboutPage';
 import LoginSignUpPage from './components/LoginSignUpPage';
 
+import AppContainer from './containers/App';
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
 import SearchResultsPageContainer from './containers/SearchResultsPage';
@@ -55,7 +55,7 @@ ReactDOM.render(
     <Router onUpdate={ () => window.scrollTo(0, 0) } history={history}>
       <Redirect from='/' to='home'/>
 
-      <Route path='/' component={ App }>
+      <Route path='/' component={ AppContainer }>
         <Route path='home' component={ Home }/>
 
         <Route path='shop' component={ ShopContainer }/>

@@ -15,6 +15,7 @@ export class CheckoutPage extends Component {
     openSuccessPanel: PropTypes.func.isRequired,
     toggleAddressForm: PropTypes.func.isRequired,
     toggleGiftTextarea: PropTypes.func.isRequired,
+    payProducts: PropTypes.func.isRequired,
     checkoutPage: PropTypes.shape({
       addressFromState: PropTypes.bool.isRequired,
     }).isRequired,
@@ -25,6 +26,7 @@ export class CheckoutPage extends Component {
     const {
       openSuccessPanel,
       clearCart,
+      payProducts,
     } = this.props;
 
     const isFirstFormValid = this.billingAddressForm.handleValidate();
@@ -39,12 +41,14 @@ export class CheckoutPage extends Component {
     } else if (!isFirstFormValid || !isCreditCardFormValid) {
       window.scrollTo(0, 0);
     } else {
-      openSuccessPanel(1500);
-
-      setTimeout(() => {
+      payProducts()
+        .then(() => {
           clearCart();
-          browserHistory.push('/home');
-      }, 1500);
+          openSuccessPanel(1500)
+          setTimeout(() => {
+              browserHistory.push('/home');
+          }, 1500);
+        });
     }
   }
 

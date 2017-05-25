@@ -10,7 +10,8 @@ import {
 
 import {
   toggleAddressForm,
-  toggleGiftTextarea
+  toggleGiftTextarea,
+  payProducts,
 } from '../store/actions/CheckoutPageActions';
 
 import CheckoutPage from '../components/CheckoutPage';
@@ -25,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
     toggleGiftTextarea,
     openSuccessPanel,
     clearCart,
+    payProducts,
   }, dispatch)
 });
 

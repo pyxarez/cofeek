@@ -18,7 +18,8 @@ const Menu = ({ menu, toggleMenuState }) => {
 
   return (
     <section className={menu ? styles.visible : styles.hidden}>
-      <img className={styles.close} onClick={toggleMenuState} src={closeSVG} alt="close"/>
+     {/* <img className={styles.close} onClick={toggleMenuState} src={closeSVG} alt="close"/> */}
+      {/*<button className={ styles.buttonClose }> <span></span> </button> */}
 
       { isAnonymous
           ? <Link to='/login' onClick={ toggleMenuState } className={ styles.topTitle }>

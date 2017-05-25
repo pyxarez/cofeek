@@ -7,6 +7,7 @@ import {
   USER_PASSWORD_NOT_SAVED,
   REMOVE_FROM_WISH_LIST_SUCCESS,
 } from '../constants/ProfilePage.js';
+import { PAYMENT_SUCCESS } from '../constants/CheckoutPage';
 import {
   ADDING_PRODUCT_TO_WISHLIST_SUCCESS,
 } from '../constants/ProductPage';
@@ -74,6 +75,14 @@ const profilePage = (state = initialState, { type, payload }) => {
         wishList: {
           ...state.wishList,
           [payload.product.id]: { ...payload.product },
+        }
+      };
+    case PAYMENT_SUCCESS:
+      return {
+        ...state,
+        paymentsHistory: {
+          ...state.paymentsHistory,
+          ...payload.products,
         }
       };
     default:

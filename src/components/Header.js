@@ -14,7 +14,8 @@ import cartSVG from '../assets/images/cart.min.svg';
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (
     <header className={ styles.common }>
-      <img src={ burgerSVG } onClick={toggleMenuState} className={ menu ?  styles.hidden : styles.visible } alt="menu"/>
+      {/* <img src={ burgerSVG } onClick={toggleMenuState} className={ menu ?  styles.hidden : styles.visible } alt="menu"/> */}
+
       <Link className={ styles.logo } to='/home'/>
       <SearchBox/>
       <span className={ styles.phoneNumber }>

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 9999;
+  z-index: 9001;
   background: rgba(255, 255, 255, 0.87);
   width: 100vw;
   height: 100%;
@@ -29,6 +29,42 @@
   left: 18px;
   cursor: pointer;
 }
+
+/*.button-close {
+  $border: 2px solid black;
+  $left: -2px;
+
+  position: absolute;
+  width: 30px;
+  height: 0px;
+  top: 25px;
+  left: 18px;
+  cursor: pointer;
+  background: none;
+  border: $border;
+
+  &:before {
+    position: absolute;
+    top: -12px;
+    left: $left;
+    display: block;
+    content: '';
+    width: 30px;
+    height: 100%;
+    border: $border;
+  }
+
+  &:after {
+    position: absolute;
+    top: 9px;
+    left: $left;
+    display: block;
+    content: '';
+    width: 30px;
+    height: 100%;
+    border: $border;
+  }
+} */
 
 /* Social */
 .images {
