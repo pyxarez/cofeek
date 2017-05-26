@@ -5,7 +5,6 @@ import { auth } from '../firebaseApp';
 
 import { Link } from 'react-router';
 
-import closeSVG from '../assets/images/close.min.svg';
 import loginSVG from './Menu.res/login.min.svg';
 import profileSVG from './Menu.res/profile.min.svg';
 

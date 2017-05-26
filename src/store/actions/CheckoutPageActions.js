@@ -4,6 +4,7 @@ import {
   PAYMENT_SUCCESS,
 } from '../constants/CheckoutPage';
 import { auth, database } from '../../firebaseApp';
+import { addTimeStamp } from '../../utils/helpers';
 
 export const toggleAddressForm = () => ({
   type: TOGGLE_ADDRESS_FORM,
@@ -26,9 +27,7 @@ export const payProducts = () =>
       const { cart } = getState();
       const { products } = cart;
       const paymentsHistoryRef = database.ref(`/users/${auth.currentUser.uid}/profile/paymentsHistory`);
-      const updates = {
-        ...products,
-      };
+      const updates = addTimeStamp(products);
 
       await paymentsHistoryRef.update(updates);
       dispatch( paymentSuccess(products) );

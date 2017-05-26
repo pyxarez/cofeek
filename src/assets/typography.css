@@ -18,6 +18,11 @@
   color: white;
 }
 
+.medium-title {
+  font-size: 120%;
+  font-weight: bold;
+}
+
 .big-title {
   font-size: 250%;
 }

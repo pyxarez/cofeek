@@ -93,7 +93,8 @@ const cart = ( state = initialState, { type, payload } ) => {
     case CLEAR_CART:
       return {
         ...state,
-        products: {}
+        products: {},
+        totalCost: 0,
       };
     default:
       return state;

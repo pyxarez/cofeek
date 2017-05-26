@@ -25,10 +25,12 @@ const accumToArrayAndHandle = convertingFunc => {
 
 export const transformToNotNestedArray = accumToArrayAndHandle(toArray);
 
-export const iterateByObjAndApplyFuncToEveryElem = func => (objectToIterate, ...args) => {
+export const iterateByObjAndApplyFuncToEveryElem = func => (iteratedObject, ...args) => {
   const accum = {};
 
-  Object.keys(objectToIterate).forEach(func.bind(null, accum, objectToIterate, ...args));
+  Object
+    .keys(iteratedObject)
+    .forEach( func.bind(null, accum, iteratedObject, ...args) );
   
   return accum;
 }
@@ -36,6 +38,13 @@ export const iterateByObjAndApplyFuncToEveryElem = func => (objectToIterate, ...
 export const filterObject = iterateByObjAndApplyFuncToEveryElem((accum, iteratedObject, objectToDelete, key) => {
   if (key !== objectToDelete.id) {
     accum[key] = iteratedObject[key]
+  }
+});
+
+export const addTimeStamp = iterateByObjAndApplyFuncToEveryElem((accum, iteratedObject, key) => {
+  accum[key] = {
+    ...iteratedObject[key],
+    timestamp: new Date().toLocaleDateString('ru'),
   }
 });
 

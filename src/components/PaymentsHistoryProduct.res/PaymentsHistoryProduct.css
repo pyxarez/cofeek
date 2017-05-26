@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.product-picture {
+  width: 115px;
+}
+
+.product-cost {
+  margin-left: 10px;
+}
+
+.product-name {
+  composes: medium-title from '../../assets/typography.css';
+  composes: links from '../../assets/general.css';
+  display: block;
+  margin-bottom: 10px;
+}
+
+.count {
+  margin-bottom: 5px;
+}
+
+.product-cost-wrapper {
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  color: color(black a(60%));
+}

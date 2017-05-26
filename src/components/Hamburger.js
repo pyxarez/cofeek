@@ -11,4 +11,9 @@ const Hamburger = ({ active, onClick }) => (
     onClick={ onClick }/>
 );
 
+Hamburger.propTypes = {
+  active: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+}
+
 export default Hamburger;

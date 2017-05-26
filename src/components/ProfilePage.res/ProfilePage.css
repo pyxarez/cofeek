@@ -86,6 +86,7 @@
 
 .child-container {
   min-width: 100%;
+  min-height: 100vh;
   background: white;
   transition: opacity .3s ease-out;
 }

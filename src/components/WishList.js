@@ -20,6 +20,7 @@ const WishList = ({ wishList }) => {
     </section>
   );
 }
+
 WishList.propTypes = {
   wishList: PropTypes.oneOfType([
     PropTypes.array,
