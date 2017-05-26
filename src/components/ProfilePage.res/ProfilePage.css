@@ -1,7 +1,14 @@
 .main-container {
   padding: 100px 10px 0 10px;
   min-height: 40vh;
+  max-width: 1200px;
+  margin: 0 auto;
   height: auto;
+}
+
+.fc {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .container {
@@ -140,14 +147,26 @@
     border-right: 1px solid black;
     margin-right: 30px;
     margin-bottom: 100px;
+    align-items: left;
   }
 
+  .user-info-wrapper {
+    flex-flow: row wrap;
+  }
+
+  .fc {
+    display: flex;
+    flex-flow: column;
+    margin-left: 12px;
+  }
+  
   .container-hidden {
     display: block;
   }
 
   .category {
     border-bottom: none;
+    padding-left: 20px;
   }
 
   .child-container {
@@ -166,5 +185,15 @@
 
   .back-to-profile-link {
     display: none;
+  }
+}
+
+@media only screen and (width >= 1200px) {
+  .container {
+    min-height: 80vh;
+  }
+
+  .child-container {
+    max-height: 80vh;
   }
 }

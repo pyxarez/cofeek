@@ -24,8 +24,10 @@ const ProfilePage = ({ userName, children, location }) => {
       <div className={ location.pathname === '/profile' ? styles.container : styles.containerHidden }>
         <div className={ styles.userInfoWrapper }>
           <span className={ styles.userIcon }>{ auth.currentUser.displayName[0] }</span>
-          <span className={ styles.userName }>{ auth.currentUser.displayName }</span>
-          <Link className={ styles.exitLink } onClick={ () => auth.signOut() } to='/home'>Выйти</Link>
+          <div className={ styles.fc}>
+            <span className={ styles.userName }>{ auth.currentUser.displayName }</span>
+            <Link className={ styles.exitLink } onClick={ () => auth.signOut() } to='/home'>Выйти</Link>
+          </div>
         </div>
 
         <ul className={ styles.list }>

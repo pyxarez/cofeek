@@ -34,3 +34,13 @@
 .error-message {
   color: red;
 }
+
+@media only screen and (width >= 1200px) {
+  .container {
+    display: flex;
+  }
+
+  .wrapper {
+    flex: 1;
+  }
+}
