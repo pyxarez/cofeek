@@ -11,29 +11,6 @@
   z-index: 9000;
 }
 
-/* burgerino */
-/*.burger {
-  height: 30px;
-  width: 25px;
-  margin-right: 5px;
-  transition: opacity 0.3s linear;
-  cursor: pointer;
-}
-
-.visible {
-  composes: burger;
-  opacity: 1;
-  visibility: visible;
-}
-
-.hidden {
-  composes: burger;
-  opacity: 0;
-  visibility: hidden;
-}
-
-*/
-
 .logo {
   position: relative;
   height: 40px;

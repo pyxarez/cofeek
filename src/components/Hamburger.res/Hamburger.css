@@ -1,0 +1,66 @@
+
+/* css burger */
+.hamburger {
+  width: 28px;
+  height: 20px;
+  border: none;
+  position: fixed;
+  cursor: pointer;
+  z-index: 9002;
+  outline: none;
+  top: 18px;
+  left: 10px;
+  color: color(black a(85%));
+  background: currentColor;
+  background-clip: content-box;
+  padding: 8px 0;
+
+  &:hover:after {
+    transform: translateY(-50%);
+  }
+
+  &:hover:before {
+    transform: translateY(50%);
+  }
+
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    transition: all .25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    left: 0;
+    background: currentColor;
+    height: 4px;
+    width: 100%;
+  }
+
+  &:after {
+    top: 0;
+  }
+
+  &:before {
+    top: 16px;
+  }
+}
+
+
+.inactive {
+  composes: hamburger;
+}
+
+.active {
+  composes: hamburger;
+  transition: all .25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  background-color: transparent;
+
+  &:after, &:hover:after {
+    transform: translateY(200%) rotate(-45deg);
+  }
+  
+  &:before, &:hover:before {
+    transform: translateY(-200%) rotate(225deg);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

@@ -24,7 +24,7 @@ const ProfilePage = ({ userName, children, location }) => {
 
         <ul className={ styles.list }>
           <li className={ styles.category }>
-            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/wishlist'>
+            <Link className={ styles.link } activeClassName={ styles.activeLink } to='/profile/paymentshistory'>
               <img className={ styles.categoryImage } src={ paymentsHistoryImage } alt=""/>
               История покупок
             </Link>

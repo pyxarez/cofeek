@@ -6,7 +6,6 @@ import SearchBox from './SearchBox';
 
 import styles from './Header.res/Header.css';
 
-import burgerSVG from './Header.res/burger.min.svg';
 import phoneSVG from './Header.res/phone.min.svg';
 
 import cartSVG from '../assets/images/cart.min.svg';
@@ -14,8 +13,6 @@ import cartSVG from '../assets/images/cart.min.svg';
 const Header = ({ menu, toggleMenuState, toggleCartState }) => {
   return (
     <header className={ styles.common }>
-      {/* <img src={ burgerSVG } onClick={toggleMenuState} className={ menu ?  styles.hidden : styles.visible } alt="menu"/> */}
-
       <Link className={ styles.logo } to='/home'/>
       <SearchBox/>
       <span className={ styles.phoneNumber }>

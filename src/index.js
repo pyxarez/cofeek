@@ -7,15 +7,16 @@ import configureStore from './store/configureStore';
 import { Router, Route, browserHistory, Redirect } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import App from './components/App';
 import Home from './components/Home';
 import AboutPage from './components/AboutPage';
 import LoginSignUpPage from './components/LoginSignUpPage';
 
-import AppContainer from './containers/App';
 import ShopContainer from './containers/Shop';
 import ProductPageContainer from './containers/ProductPage';
 import SearchResultsPageContainer from './containers/SearchResultsPage';
 import CheckoutPageContainer from './containers/CheckoutPage';
+import PaymentsHistory from './containers/PaymentsHistory';
 
 import ProfilePageContainer from './containers/ProfilePage';
 import ProfileNotifications from './containers/ProfileNotifications';
@@ -55,7 +56,7 @@ ReactDOM.render(
     <Router onUpdate={ () => window.scrollTo(0, 0) } history={history}>
       <Redirect from='/' to='home'/>
 
-      <Route path='/' component={ AppContainer }>
+      <Route path='/' component={ App }>
         <Route path='home' component={ Home }/>
 
         <Route path='shop' component={ ShopContainer }/>
@@ -76,6 +77,7 @@ ReactDOM.render(
           <Route path='notifications' component={ ProfileNotifications }/>
           <Route path='settings' component={ ProfileSettings }/>
           <Route path='wishlist' component={ WishList }/>
+          <Route path='paymentshistory' component={ PaymentsHistory }/>
         </Route>
       </Route>
     </Router>
