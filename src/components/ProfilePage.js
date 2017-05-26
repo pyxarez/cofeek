@@ -11,7 +11,13 @@ import notificationsImage from './ProfilePage.res/notifications.svg';
 import styles from './ProfilePage.res/ProfilePage.css';
 
 const ProfilePage = ({ userName, children, location }) => {
-  if (!auth.currentUser || auth.currentUser.isAnonymous) return <div className={ styles.container }>Незарегистрированный пользователь. <Link to='/login'>Войти</Link></div>;
+  if (!auth.currentUser || auth.currentUser.isAnonymous) return (
+    <section className={ styles.mainContainer}>
+      <div className={ styles.container }>Незарегистрированный пользователь.
+        <Link to='/login'>Войти</Link>
+      </div>
+    </section>
+  );
   
   return (
     <main className={ styles.mainContainer }>

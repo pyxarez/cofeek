@@ -3,3 +3,9 @@
   max-height: 60vh;
   overflow-y: scroll;
 }
+
+@media only screen and (width >= 768px) {
+  .container {
+    max-height: none;
+  }
+}

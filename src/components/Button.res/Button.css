@@ -85,4 +85,10 @@ $btn-color: black;
   }
 }
 
+@media only screen and (width >= 320px) {
+  .button {
+    max-width: 300px;
+  }
+}
+
 

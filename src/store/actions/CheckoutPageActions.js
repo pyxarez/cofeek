@@ -30,7 +30,7 @@ export const payProducts = () =>
       const updates = addTimeStamp(products);
 
       await paymentsHistoryRef.update(updates);
-      dispatch( paymentSuccess(products) );
+      dispatch( paymentSuccess(updates) );
     } catch(error) {
       throw Error(error);
     }

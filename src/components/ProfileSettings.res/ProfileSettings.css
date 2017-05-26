@@ -1,5 +1,6 @@
 .container {
   heigth: 100%;
+  padding-bottom: 100px;
 }
 
 .wrapper {
@@ -24,6 +25,8 @@
 
 .save-button {
   composes: buttons from '../../assets/general.css';
+  max-width: 300px;
+  display: block;
   margin: 70px 0 20px 0;
   height: 40px
 }
