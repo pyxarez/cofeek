@@ -5,7 +5,13 @@ import Button from './Button';
 
 import styles from './WishListProduct.res/WishListProduct.css';
 
-const WishListProduct = ({ name, cost, url, addToCart, removeFromWishList }) => (
+const WishListProduct = ({
+  name,
+  cost,
+  url,
+  addToCart,
+  removeFromWishList
+}) => (
   <section className={ styles.container }>
     <img className={ styles.productPicture } src={ url } alt="product"/>
     <div className={ styles.content }>

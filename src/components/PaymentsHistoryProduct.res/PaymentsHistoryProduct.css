@@ -9,6 +9,7 @@
 
 .content {
   flex: 1;
+  margin-left: 10px;
 }
 
 .product-picture {
@@ -36,4 +37,11 @@
 
 .timestamp {
   color: color(black a(60%));
+}
+
+@media only screen and (width <= 320px) {
+  .product-picture {
+    flex: 0;
+    max-width: 115px;
+  }
 }

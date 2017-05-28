@@ -7,7 +7,7 @@ const AddedPanel = ({ state, closeSuccessPanel, message }) => {
   return (
     <div className={ state ? styles.panelVisible : styles.panelHidden }>
       { message }
-    {/* Нарисовать крестик, с помощью которого буду закрывать панельку <svg><g></g></svg>*/}
+      <button className={ styles.close } onClick={ closeSuccessPanel }> <span></span></button>
     </div>
   );
 };

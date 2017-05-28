@@ -8,11 +8,14 @@
 }
 
 .content {
-  flex: 1;
+  flex: 1 0 174px;
+  margin-left: 10px;
 }
 
 .product-picture {
+  max-width: 100%;
   width: 115px;
+  height: auto;
 }
 
 .product-name {
@@ -33,3 +36,4 @@
   display: block;
   margin-top: 5px;
 }
+
